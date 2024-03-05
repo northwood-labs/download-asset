@@ -2,6 +2,18 @@
 
 Simplifies the process of downloading release assets from GitHub for the current operating system and current CPU architecture.
 
+```gherkin
+Given the GitHub repository identifier
+  And a mapping of the current OS to the asset's naming pattern
+  And a mapping of the current CPU to the asset's naming pattern
+  And a pattern to match for the asset names
+  And the location of the binary inside the requested archive
+ Then download the archive
+  And read the files inside of the archive
+  And extract the requested file from the archive
+  And save it to your $PATH.
+```
+
 ## The problem this helps with
 
 I work with Linux in Docker on the daily. And the people and machines I support have a blend of Intel/AMD and ARM/Graviton/Apple Silicon chips.

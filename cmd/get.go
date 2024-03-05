@@ -28,11 +28,12 @@ import (
 	"github.com/northwood-labs/golang-utils/exiterrorf"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 var (
 	fArchivePath string
-	fGHEEndpoint string
+	fEndpoint    string
 	fOwnerRepo   string
 	fPattern     string
 	fTag         string
@@ -64,9 +65,9 @@ var (
 	fRiscV64  string
 	fS390x    string
 
-	apiToken = os.Getenv("GITHUB_TOKEN")
-	endpoint = ""
-	release  *gh.RepositoryRelease
+	apiToken    = os.Getenv("GITHUB_TOKEN")
+	apiEndpoint = ""
+	release     *gh.RepositoryRelease
 
 	currentOS  string
 	currentCPU string
@@ -83,25 +84,27 @@ var (
 				exiterrorf.ExitErrorf(errors.New("GitHub token not found; set GITHUB_TOKEN environment variable"))
 			}
 
+			err := readConfig()
+			if err != nil {
+				exiterrorf.ExitErrorf(err)
+			}
+
 			if fVerbose {
 				colorHeader.Println(" VERBOSE ")
 			}
 
 			w := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', 0)
 
-			if fGHEEndpoint != "" {
-				endpoint = fGHEEndpoint
-			}
+			apiEndpoint, _, _ = github.ParseDomain(fEndpoint)
 
 			if fVerbose {
-				apiEndpoint, _, _ := github.ParseDomain(endpoint)
 				fmt.Fprintf(w, " GitHub endpoint:\t%s\t\n", apiEndpoint)
 				fmt.Fprintf(w, " GitHub token:\t%s\t\n", apiToken[0:8]+".................................")
 			}
 
 			client, err := github.NewClient(&github.NewClientInput{
 				Token:    apiToken,
-				Endpoint: endpoint,
+				Endpoint: fEndpoint,
 			})
 			if err != nil {
 				exiterrorf.ExitErrorf(errors.Wrap(err, "failed to create GitHub client"))
@@ -115,7 +118,14 @@ var (
 			if fVerbose {
 				fmt.Fprintf(w, " Owner:\t%s\t\n", ownerRepo[0])
 				fmt.Fprintf(w, " Repository:\t%s\t\n", ownerRepo[1])
+
+				if viper.ConfigFileUsed() != "" {
+					fmt.Fprintf(w, " Config file:\t%s\t\n", viper.ConfigFileUsed())
+				}
 			}
+
+			// Apply values from configuration file.
+			applyConfigValues(ownerRepo)
 
 			if fTag == "latest" {
 				release, err = github.GetLatestRelease(client, ownerRepo[0], ownerRepo[1])
@@ -216,6 +226,7 @@ var (
 					[]string{
 						// "7z",
 						// "bz2",
+						"exe",
 						"gz",
 						"tar.bz2",
 						"tar.gz",
@@ -244,11 +255,10 @@ var (
 			}
 
 			if fVerbose {
-				fmt.Fprintf(w, " Current OS:\t%s\t\n", currentOS)
-				fmt.Fprintf(w, " Current CPU:\t%s\t\n", currentCPU)
+				fmt.Fprintf(w, " Current OS ident:\t%s\t\n", currentOS)
+				fmt.Fprintf(w, " Current CPU ident:\t%s\t\n", currentCPU)
 				fmt.Fprintf(w, " Asset pattern:\t%s\t\n", fPattern)
 				fmt.Fprintf(w, " Resolved pattern:\t%s\t\n", resolvedAssetPattern)
-				fmt.Fprintln(w, "")
 			}
 
 			err = w.Flush()
@@ -256,6 +266,18 @@ var (
 				exiterrorf.ExitErrorf(err)
 			}
 
+			// Check that we have everything before we trigger downloads
+			if fPattern == "" || fWriteToBin == "" {
+				exiterrorf.ExitErrorf(errors.New("missing one of pattern or write-to-bin"))
+			}
+
+			if fVerbose {
+				fmt.Fprintf(w, " File inside archive:\t%s\t\n", resolvedArchivePath)
+				fmt.Fprintf(w, " Binary added to PATH:\t%s\t\n", fWriteToBin)
+				fmt.Fprintln(w, "")
+			}
+
+			// Ready to download the asset
 			archiveStream, name, err := github.GetAssetStream(
 				client,
 				ownerRepo,
@@ -305,7 +327,7 @@ func init() {
 		"The owner and repository name in the format of 'owner/repo'.",
 	)
 	getCmd.Flags().StringVarP(
-		&fGHEEndpoint,
+		&fEndpoint,
 		"endpoint",
 		"e",
 		"https://api.github.com",
@@ -322,7 +344,7 @@ func init() {
 		&fPattern,
 		"pattern",
 		"p",
-		"{{.OS}}_{{.Arch}}",
+		"",
 		"The naming pattern of the asset name to match. Supports a substring or regexp. "+
 			"Supported variables are .Ver, .OS, .Arch, and .Ext.",
 	)
@@ -513,9 +535,6 @@ func init() {
 		"s390x",
 		"When the current CPU architecture is 64-bit s390x, use this value when looking up the correct asset.",
 	)
-
-	_ = getCmd.MarkFlagRequired("archive-path") // lint:allow_unhandled
-	_ = getCmd.MarkFlagRequired("write-to-bin") // lint:allow_unhandled
 }
 
 func replacePatternVariables(pattern string, patternVars PatternMatches) (string, error) {
@@ -532,4 +551,72 @@ func replacePatternVariables(pattern string, patternVars PatternMatches) (string
 	}
 
 	return buf.String(), nil
+}
+
+func readConfig() error {
+	viper.SetConfigName("config")
+	viper.SetConfigType("toml")
+
+	viper.AddConfigPath(".")                     // Current directory first.
+	viper.AddConfigPath("$HOME/.download-asset") // Then the HOME directory.
+	viper.AddConfigPath("/etc/download-asset/")  // Then the system directory.
+
+	errConfigFileNotFoundError := viper.ConfigFileNotFoundError{}
+
+	if err := viper.ReadInConfig(); err != nil {
+		if ok := errors.As(err, &errConfigFileNotFoundError); ok {
+			// Config file not found; ignore error.
+		} else {
+			return errors.Wrap(err, "failed to read config file")
+		}
+	}
+
+	return nil
+}
+
+func applyConfigValues(ownerRepo []string) {
+	if viper.IsSet(strings.Join(ownerRepo, ".")) {
+		flagMap := map[string]*string{
+			// Config
+			"endpoint":     &fEndpoint,
+			"pattern":      &fPattern,
+			"archive-path": &fArchivePath,
+			"write-to-bin": &fWriteToBin,
+
+			// OS
+			"darwin":    &fDarwin,
+			"dragonfly": &fDragonfly,
+			"freebsd":   &fFreeBSD,
+			"illumos":   &fIllumos,
+			"linux":     &fLinux,
+			"netbsd":    &fNetBSD,
+			"openbsd":   &fOpenBSD,
+			"plan9":     &fPlan9,
+			"solaris":   &fSolaris,
+			"windows":   &fWindows,
+
+			// CPU Architectures
+			"arm32":     &fArm32,
+			"arm64":     &fArm64,
+			"intel32":   &fIntel32,
+			"intel64":   &fIntel64,
+			"loong64":   &fLoong64,
+			"mips32":    &fMIPS,
+			"mips32-le": &fMIPSle,
+			"mips64":    &fMIPS64,
+			"mips64-le": &fMIPS64LE,
+			"ppc64":     &fPPC64,
+			"ppc64le":   &fPPC64LE,
+			"riscv64":   &fRiscV64,
+			"s390x":     &fS390x,
+		}
+
+		for k := range flagMap {
+			v := flagMap[k]
+
+			if viper.IsSet(strings.Join(ownerRepo, ".") + "." + k) {
+				*v = viper.GetString(strings.Join(ownerRepo, ".") + "." + k)
+			}
+		}
+	}
 }

@@ -1,0 +1,91 @@
+[aquasecurity.trivy]
+pattern      = "trivy_{{.Ver}}_{{.OS}}-{{.Arch}}.{{.Ext}}$"
+archive-path = "trivy"
+write-to-bin = "trivy"
+darwin       = "macOS"
+freebsd      = "FreeBSD"
+linux        = "Linux"
+windows      = "windows"
+arm32        = "ARM"
+arm64        = "ARM64"
+intel32      = "32bit"
+intel64      = "64bit"
+ppc64le      = "PPC64LE"
+
+[direnv.direnv]
+pattern      = "direnv.{{.OS}}-{{.Arch}}$"
+archive-path = ""                          # single binary
+write-to-bin = "direnv"
+
+[golangci.golangci-lint]
+pattern      = "golangci-lint-{{.Ver}}-{{.OS}}-{{.Arch}}.{{.Ext}}$"
+archive-path = "golangci-lint-{{.Ver}}-{{.OS}}-{{.Arch}}/golangci-lint"
+write-to-bin = "golangci-lint"
+arm32        = "armv6"
+
+[gruntwork-io.terragrunt]
+pattern      = "terragrunt_{{.OS}}_{{.Arch}}$"
+archive-path = ""                              # single binary
+write-to-bin = "terragrunt"
+
+[hadolint.hadolint]
+pattern      = "hadolint-{{.OS}}-{{.Arch}}$"
+archive-path = ""                            # single binary
+write-to-bin = "hadolint"
+darwin       = "Darwin"
+linux        = "Linux"
+windows      = "Windows"
+intel64      = "x86_64"
+
+[infracost.infracost]
+pattern      = "infracost-{{.OS}}-{{.Arch}}.{{.Ext}}$"
+archive-path = "infracost-{{.OS}}-{{.Arch}}"
+write-to-bin = "infracost"
+
+[koalaman.shellcheck]
+pattern      = "shellcheck-v{{.Ver}}.{{.OS}}.{{.Arch}}.{{.Ext}}$"
+archive-path = "shellcheck-v{{.Ver}}/shellcheck"
+write-to-bin = "shellcheck"
+arm32        = "armv6hf"
+arm64        = "aarch64"
+intel64      = "x86_64"
+
+[iann0036.iamlive]
+pattern      = "iamlive-v{{.Ver}}-{{.OS}}-{{.Arch}}.{{.Ext}}$"
+archive-path = "iamlive"
+write-to-bin = "iamlive"
+
+[minamijoyo.hcledit]
+pattern      = "hcledit_{{.Ver}}_{{.OS}}_{{.Arch}}.{{.Ext}}$"
+archive-path = "hcledit"
+write-to-bin = "hcledit"
+
+[minamijoyo.tfschema]
+pattern      = "tfschema_{{.Ver}}_{{.OS}}_{{.Arch}}.{{.Ext}}$"
+archive-path = "tfschema"
+write-to-bin = "tfschema"
+
+[opentofu.opentofu]
+pattern      = "tofu_{{.Ver}}_{{.OS}}_{{.Arch}}.{{.Ext}}$"
+archive-path = "tofu"
+write-to-bin = "tofu"
+
+[solana-labs.solana]
+pattern      = "solana-release-{{.Arch}}-{{.OS}}.{{.Ext}}$"
+archive-path = "solana-release/bin/solana"
+write-to-bin = "solana"
+darwin       = "apple-darwin"
+linux        = "unknown-linux-gnu"
+windows      = "pc-windows"
+arm64        = "aarch64"
+intel64      = "x86_64"
+
+[terraform-docs.terraform-docs]
+pattern      = "terraform-docs-v{{.Ver}}-{{.OS}}-{{.Arch}}.{{.Ext}}$"
+archive-path = "terraform-docs"
+write-to-bin = "terraform-docs"
+
+[terraform-linters.tflint]
+pattern      = "tflint_{{.OS}}_{{.Arch}}.{{.Ext}}$"
+archive-path = "tflint"
+write-to-bin = "tflint"

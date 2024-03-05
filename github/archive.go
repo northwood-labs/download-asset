@@ -20,6 +20,7 @@ import (
 	"bytes"
 	"compress/bzip2"
 	"compress/gzip"
+	"fmt"
 	"io"
 	"log"
 	"os"
@@ -110,12 +111,11 @@ func Decompress(archiveStream io.ReadCloser, filename, findPattern, writeToBin s
 
 		return binPath, nil
 	}
-
-	return "", nil
 }
 
 func handleTar(g io.Reader, findPattern, writeToBin string) (string, error) {
 	t := tar.NewReader(g)
+	found := false
 
 	// /usr/local/bin
 	binPath := "/" + filepath.Join("usr", "local", "bin", writeToBin)
@@ -124,9 +124,7 @@ func handleTar(g io.Reader, findPattern, writeToBin string) (string, error) {
 		hdr, err := t.Next()
 		if err == io.EOF {
 			break // End of archive
-		}
-
-		if err != nil {
+		} else if err != nil {
 			return binPath, errors.Wrap(err, "error reading tar header")
 		}
 
@@ -134,6 +132,8 @@ func handleTar(g io.Reader, findPattern, writeToBin string) (string, error) {
 			if !strings.EqualFold(hdr.Name, findPattern) {
 				continue
 			}
+
+			found = true
 
 			f, err := os.Create(binPath) // lint:allow_include_file
 			if err != nil {
@@ -161,6 +161,10 @@ func handleTar(g io.Reader, findPattern, writeToBin string) (string, error) {
 				return binPath, errors.Wrap(err, "could not close the new file")
 			}
 		}
+	}
+
+	if !found {
+		return binPath, errors.New(fmt.Sprintf("failed to find '%s' inside the archive", findPattern))
 	}
 
 	return binPath, nil
