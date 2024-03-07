@@ -1,5 +1,7 @@
 # Download Assets
 
+![](docs/demo.svg)
+
 Simplifies the process of:
 
 1. **installing**
