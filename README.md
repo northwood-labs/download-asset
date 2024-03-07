@@ -356,3 +356,25 @@ intel64      = "x86_64"
 ```
 
 </details>
+
+### Archive and file extension support
+
+`download-asset`’s `.Ext` variable can match assets with the following file extensions:
+
+* `exe`
+* `tar.bz2`
+* `tar.gz`
+* `tar.xz`
+* `tbz2`
+* `tgz`
+* `txz`
+* `zip`
+
+And it can decode/read the following archive formats:
+
+* `tar` + `bzip2`
+* `tar` + `gzip`
+* `tar` + `xz`
+* `zip`
+
+Others can be requested if we have a real-world repository to test against.
