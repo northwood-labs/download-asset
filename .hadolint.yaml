@@ -1,0 +1,6 @@
+ignored:
+  - DL3008 # https://github.com/hadolint/hadolint/wiki/DL3008 (apt-get; do not pin)
+  - DL3059 # https://github.com/hadolint/hadolint/wiki/DL3059 (bad advice)
+
+trustedRegistries:
+  - docker.io # Official upstream
