@@ -75,7 +75,7 @@ var (
 	// getCmd represents the get command
 	getCmd = &cobra.Command{
 		Use:   "get",
-		Short: "Download an asset from a GitHub release.",
+		Short: "Download an asset from a GitHub release",
 		Long: `Download an asset from a GitHub release.
 
 --------------------------------------------------------------------------------`,
@@ -554,12 +554,12 @@ func replacePatternVariables(pattern string, patternVars PatternMatches) (string
 }
 
 func readConfig() error {
-	viper.SetConfigName("config")
+	viper.SetConfigName("download-asset")
 	viper.SetConfigType("toml")
 
-	viper.AddConfigPath(".")                     // Current directory first.
-	viper.AddConfigPath("$HOME/.download-asset") // Then the HOME directory.
-	viper.AddConfigPath("/etc/download-asset/")  // Then the system directory.
+	viper.AddConfigPath(".")                      // Current directory first.
+	viper.AddConfigPath("$HOME/.download-asset/") // Then the HOME directory.
+	viper.AddConfigPath("/etc/download-asset/")   // Then the system directory.
 
 	errConfigFileNotFoundError := viper.ConfigFileNotFoundError{}
 

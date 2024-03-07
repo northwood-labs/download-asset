@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM --platform=$TARGETPLATFORM golang:1.22-alpine AS go-installer
 
-COPY config.toml /etc/download-asset/config.toml
+COPY download-asset.toml /etc/download-asset/download-asset.toml
 
 COPY ./*.go /workspace/
 COPY ./go.* /workspace/
