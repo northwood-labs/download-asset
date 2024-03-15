@@ -1,0 +1,1289 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+
+Stripped-down functionality of the 'get' command that only returns the OS and
+CPU architecture values in a normalized format.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset os-arch [flags]
+
+Flags:
+      --arm32 string       When the current CPU architecture is 32-bit ARM, use this value when looki
+ng up the correct asset. (default "arm")
+      --arm64 string       When the current CPU architecture is 64-bit ARM, use this value when looki
+ng up the correct asset. (default "arm64")
+      --darwin string      When the current OS is Darwin, use this value when looking up the correct
+asset. (default "darwin")
+      --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
+ct asset. (default "dragonfly")
+────────────────────────────────────────────────────────────────────────────────
+
+Stripped-down functionality of the 'get' command that only returns the OS and
+CPU architecture values in a normalized format.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset os-arch [flags]
+
+Flags:
+      --arm32 string       When the current CPU architecture is 32-bit ARM, use this value when looki
+ng up the correct asset. (default "arm")
+      --arm64 string       When the current CPU architecture is 64-bit ARM, use this value when looki
+ng up the correct asset. (default "arm64")
+      --darwin string      When the current OS is Darwin, use this value when looking up the correct
+asset. (default "darwin")
+      --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
+ct asset. (default "dragonfly")
+────────────────────────────────────────────────────────────────────────────────
+
+Stripped-down functionality of the 'get' command that only returns the OS and
+CPU architecture values in a normalized format.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset os-arch [flags]
+
+Flags:
+      --arm32 string       When the current CPU architecture is 32-bit ARM, use this value when looki
+ng up the correct asset. (default "arm")
+      --arm64 string       When the current CPU architecture is 64-bit ARM, use this value when looki
+ng up the correct asset. (default "arm64")
+      --darwin string      When the current OS is Darwin, use this value when looking up the correct
+asset. (default "darwin")
+      --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
+ct asset. (default "dragonfly")
+────────────────────────────────────────────────────────────────────────────────
+
+Stripped-down functionality of the 'get' command that only returns the OS and
+CPU architecture values in a normalized format.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset os-arch [flags]
+
+Flags:
+      --arm32 string       When the current CPU architecture is 32-bit ARM, use this value when looki
+ng up the correct asset. (default "arm")
+      --arm64 string       When the current CPU architecture is 64-bit ARM, use this value when looki
+ng up the correct asset. (default "arm64")
+      --darwin string      When the current OS is Darwin, use this value when looking up the correct
+asset. (default "darwin")
+      --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
+ct asset. (default "dragonfly")
+────────────────────────────────────────────────────────────────────────────────
+Stripped-down functionality of the 'get' command that only returns the OS and
+CPU architecture values in a normalized format.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset os-arch [flags]
+
+Flags:
+      --arm32 string       When the current CPU architecture is 32-bit ARM, use this value when looki
+ng up the correct asset. (default "arm")
+      --arm64 string       When the current CPU architecture is 64-bit ARM, use this value when looki
+ng up the correct asset. (default "arm64")
+      --darwin string      When the current OS is Darwin, use this value when looking up the correct
+asset. (default "darwin")
+      --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
+ct asset. (default "dragonfly")
+      --freebsd string     When the current OS is FreeBSD, use this value when looking up the correct
+────────────────────────────────────────────────────────────────────────────────
+Stripped-down functionality of the 'get' command that only returns the OS and
+CPU architecture values in a normalized format.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset os-arch [flags]
+
+Flags:
+      --arm32 string       When the current CPU architecture is 32-bit ARM, use this value when looki
+ng up the correct asset. (default "arm")
+      --arm64 string       When the current CPU architecture is 64-bit ARM, use this value when looki
+ng up the correct asset. (default "arm64")
+      --darwin string      When the current OS is Darwin, use this value when looking up the correct
+asset. (default "darwin")
+      --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
+ct asset. (default "dragonfly")
+      --freebsd string     When the current OS is FreeBSD, use this value when looking up the correct
+────────────────────────────────────────────────────────────────────────────────
+Flags:
+      --arm32 string       When the current CPU architecture is 32-bit ARM, use this value when looki
+ng up the correct asset. (default "arm")
+      --arm64 string       When the current CPU architecture is 64-bit ARM, use this value when looki
+ng up the correct asset. (default "arm64")
+      --darwin string      When the current OS is Darwin, use this value when looking up the correct
+asset. (default "darwin")
+      --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
+ct asset. (default "dragonfly")
+      --freebsd string     When the current OS is FreeBSD, use this value when looking up the correct
+ asset. (default "freebsd")
+  -h, --help               help for os-arch
+      --illumos string     When the current OS is Illumos, use this value when looking up the correct
+ asset. (default "illumos")
+      --intel32 string     When the current CPU architecture is 32-bit Intel-compatible, use this val
+ue when looking up the correct asset. (default "386")
+      --intel64 string     When the current CPU architecture is 64-bit Intel-compatible, use this val
+ue when looking up the correct asset. (default "amd64")
+────────────────────────────────────────────────────────────────────────────────
+Flags:
+      --arm32 string       When the current CPU architecture is 32-bit ARM, use this value when looki
+ng up the correct asset. (default "arm")
+      --arm64 string       When the current CPU architecture is 64-bit ARM, use this value when looki
+ng up the correct asset. (default "arm64")
+      --darwin string      When the current OS is Darwin, use this value when looking up the correct
+asset. (default "darwin")
+      --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
+ct asset. (default "dragonfly")
+      --freebsd string     When the current OS is FreeBSD, use this value when looking up the correct
+ asset. (default "freebsd")
+  -h, --help               help for os-arch
+      --illumos string     When the current OS is Illumos, use this value when looking up the correct
+ asset. (default "illumos")
+      --intel32 string     When the current CPU architecture is 32-bit Intel-compatible, use this val
+ue when looking up the correct asset. (default "386")
+      --intel64 string     When the current CPU architecture is 64-bit Intel-compatible, use this val
+ue when looking up the correct asset. (default "amd64")
+────────────────────────────────────────────────────────────────────────────────
+Flags:
+      --arm32 string       When the current CPU architecture is 32-bit ARM, use this value when looki
+ng up the correct asset. (default "arm")
+      --arm64 string       When the current CPU architecture is 64-bit ARM, use this value when looki
+ng up the correct asset. (default "arm64")
+      --darwin string      When the current OS is Darwin, use this value when looking up the correct
+asset. (default "darwin")
+      --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
+ct asset. (default "dragonfly")
+      --freebsd string     When the current OS is FreeBSD, use this value when looking up the correct
+ asset. (default "freebsd")
+  -h, --help               help for os-arch
+      --illumos string     When the current OS is Illumos, use this value when looking up the correct
+ asset. (default "illumos")
+      --intel32 string     When the current CPU architecture is 32-bit Intel-compatible, use this val
+ue when looking up the correct asset. (default "386")
+      --intel64 string     When the current CPU architecture is 64-bit Intel-compatible, use this val
+ue when looking up the correct asset. (default "amd64")
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+>
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+>
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+>
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+>
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern ''
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern ''
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{}}'
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{}}'
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}}'
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}}'
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on '
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{}}'
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{}}'
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{.Arch}}'
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{.Arch}}'
+Linux running on AArch64
+>
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{.Arch}}'
+Linux running on AArch64
+>
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> download-asset os-arch --help | less
+> download-asset os-arch
+linux/arm64
+> download-asset os-arch --linux Linux
+Linux/arm64
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+> download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{.Arch}}'
+Linux running on AArch64
+>
+logout
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────

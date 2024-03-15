@@ -1,7 +1,4 @@
 # Download Assets
-
-![](docs/demo.svg)
-
 Simplifies the process of:
 
 1. **installing**
@@ -99,6 +96,8 @@ This will download and compile `download-asset` on-demand for your current OS an
 > We are _very intentionally_ NOT attaching pre-built assets to releases because it creates a chicken-and-egg problem. You'd have to select your OS and CPU architecture in order to install the code, which is designed to dynamically _figure-out_ your OS and CPU architecture in order to download other assets. That seems silly to us.
 
 ## Usage
+
+![](recording/get.gif)
 
 > [!NOTE]
 > Using [`aquasecurity/trivy`](https://github.com/aquasecurity/trivy/releases) as an example repository since they build for several systems, and use many non-standard names. But this will work for any GitHub/GitHub Enterprise repository.
@@ -361,6 +360,9 @@ intel64      = "x86_64"
 
 ### Archive and file extension support
 
+<details>
+<summary>See list…</summary><br>
+
 `download-asset`’s `.Ext` variable can match assets with the following file extensions:
 
 * `exe`
@@ -380,3 +382,11 @@ And it can decode/read the following archive formats:
 * `zip`
 
 Others can be requested if we have a real-world repository to test against.
+
+</details>
+
+## Usage without GitHub
+
+If you are not downloading from GitHub, this can still be useful for providing the OS and CPU Architecture names, that you can pass to a custom script that downloads assets from elsewhere. For this, use the `os-arch` subcommand.
+
+![](recording/os-arch.gif)
