@@ -1,8 +1,8 @@
 module github.com/northwood-labs/download-asset
 
-go 1.22
+go 1.21
 
-toolchain go1.22.0
+toolchain go1.22.1
 
 require (
 	github.com/google/go-github/v60 v60.0.0

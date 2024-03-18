@@ -1,3 +1,9 @@
+.PHONY: tidy
+## tidy: [build] Tidies up the project.
+tidy:
+	# Alpine Linux 3.17+
+	go mod tidy -go=1.21
+
 .PHONY: build-setup
 ## build-setup: [build] Sets up the multi-arch build configuration.
 build-setup:
