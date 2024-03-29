@@ -24,8 +24,11 @@ import (
 	"net/http"
 	"os"
 	"regexp"
+	"sort"
+	"strings"
 
 	gh "github.com/google/go-github/v60/github"
+	"github.com/hashicorp/go-version"
 	"github.com/mailgun/errors"
 	"golang.org/x/oauth2"
 )
@@ -75,6 +78,50 @@ func GetLatestRelease(client *gh.Client, owner, repo string) (*gh.RepositoryRele
 	}
 
 	return release, nil
+}
+
+func GetLatestTag(client *gh.Client, owner, repo string) (*version.Version, error) {
+	isGo := false
+	if owner+"/"+repo == "golang/go" {
+		isGo = true
+	}
+
+	refs, _, err := client.Git.ListMatchingRefs(ctx, owner, repo, &gh.ReferenceListOptions{
+		Ref: "tags",
+	})
+	if err != nil {
+		return nil, errors.Wrap(err, "failed to get latest release")
+	}
+
+	versions := make([]*version.Version, 0)
+
+	for i := range refs {
+		ref := refs[i]
+		ver, _ := strings.CutPrefix(ref.GetRef(), "refs/tags/")
+
+		// Handle Go specially
+		if isGo {
+			if strings.HasPrefix(ver, "go") {
+				ver = strings.TrimPrefix(ver, "go")
+			} else {
+				continue
+			}
+		}
+
+		v, err := version.NewVersion(ver)
+		if err == nil && v != nil && v.String() != "" {
+			versions = append(versions, v)
+		}
+	}
+
+	// After this, the versions are properly sorted
+	sort.Sort(sort.Reverse(version.Collection(versions)))
+
+	if len(versions) > 0 {
+		return versions[0], nil
+	}
+
+	return &version.Version{}, errors.New("no versions found")
 }
 
 func GetReleaseVersion(client *gh.Client, owner, repo, tag string) (*gh.RepositoryRelease, error) {
