@@ -7,6 +7,7 @@ toolchain go1.22.1
 require (
 	github.com/google/go-github/v60 v60.0.0
 	github.com/gookit/color v1.5.4
+	github.com/hashicorp/go-version v1.6.0
 	github.com/mailgun/errors v0.2.0
 	github.com/nlnwa/whatwg-url v0.4.0
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301221220-6be250811dab
@@ -20,20 +21,14 @@ require (
 
 require (
 	github.com/bits-and-blooms/bitset v1.13.0 // indirect
-	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
-	github.com/hashicorp/go-version v1.6.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
-	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
-	github.com/northwood-labs/golang-utils/debug v0.0.0-20240301221220-6be250811dab // indirect
 	github.com/pelletier/go-toml/v2 v2.1.1 // indirect
-	github.com/rs/zerolog v1.32.0 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect
 	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect

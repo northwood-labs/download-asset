@@ -603,6 +603,45 @@
 
 
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
 
 
@@ -620,8 +659,8 @@
 
 
 
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
 
 
@@ -639,8 +678,8 @@
 
 
 
-
 ────────────────────────────────────────────────────────────────────────────────
+
 
 Stripped-down functionality of the 'get' command that only returns the OS and
 CPU architecture values in a normalized format.
@@ -658,8 +697,8 @@ ng up the correct asset. (default "arm64")
       --darwin string      When the current OS is Darwin, use this value when looking up the correct
 asset. (default "darwin")
       --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
-ct asset. (default "dragonfly")
 ────────────────────────────────────────────────────────────────────────────────
+
 
 Stripped-down functionality of the 'get' command that only returns the OS and
 CPU architecture values in a normalized format.
@@ -677,8 +716,8 @@ ng up the correct asset. (default "arm64")
       --darwin string      When the current OS is Darwin, use this value when looking up the correct
 asset. (default "darwin")
       --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
-ct asset. (default "dragonfly")
 ────────────────────────────────────────────────────────────────────────────────
+
 
 Stripped-down functionality of the 'get' command that only returns the OS and
 CPU architecture values in a normalized format.
@@ -696,8 +735,8 @@ ng up the correct asset. (default "arm64")
       --darwin string      When the current OS is Darwin, use this value when looking up the correct
 asset. (default "darwin")
       --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
-ct asset. (default "dragonfly")
 ────────────────────────────────────────────────────────────────────────────────
+
 
 Stripped-down functionality of the 'get' command that only returns the OS and
 CPU architecture values in a normalized format.
@@ -715,7 +754,6 @@ ng up the correct asset. (default "arm64")
       --darwin string      When the current OS is Darwin, use this value when looking up the correct
 asset. (default "darwin")
       --dragonfly string   When the current OS is Dragonfly, use this value when looking up the corre
-ct asset. (default "dragonfly")
 ────────────────────────────────────────────────────────────────────────────────
 Stripped-down functionality of the 'get' command that only returns the OS and
 CPU architecture values in a normalized format.
@@ -812,6 +850,7 @@ ue when looking up the correct asset. (default "386")
       --intel64 string     When the current CPU architecture is 64-bit Intel-compatible, use this val
 ue when looking up the correct asset. (default "amd64")
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
 >
 
@@ -829,8 +868,8 @@ ue when looking up the correct asset. (default "amd64")
 
 
 
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
 >
 
@@ -848,9 +887,68 @@ ue when looking up the correct asset. (default "amd64")
 
 
 
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 
 
@@ -865,11 +963,11 @@ ue when looking up the correct asset. (default "amd64")
 
 
 
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 
 
@@ -884,11 +982,11 @@ ue when looking up the correct asset. (default "amd64")
 
 
 
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
 >
@@ -903,11 +1001,11 @@ linux/arm64
 
 
 
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
 >
@@ -922,13 +1020,72 @@ linux/arm64
 
 
 
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+> download-asset os-arch
+linux/arm64
+>
+>
+
+
+
+
+
+
+
 
 
 
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+> download-asset os-arch
+linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
+>
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+> download-asset os-arch
+linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 
 
@@ -939,15 +1096,15 @@ linux/arm64
 
 
 
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
 >
@@ -958,15 +1115,15 @@ Linux/arm64
 
 
 
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
 >
@@ -977,313 +1134,422 @@ Linux/arm64
 
 
 
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+> download-asset os-arch
+linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
+> download-asset os-arch --linux Linux
+Linux/arm64
+>
+>
+
 
 
 
 
 
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+> download-asset os-arch
+linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
+> download-asset os-arch --linux Linux
+Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
+>
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+> download-asset os-arch
+linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
+> download-asset os-arch --linux Linux
+Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 
 
 
 
 
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
 >
 
 
 
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
 >
 
 
 
-
-
-
-
-
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+> download-asset os-arch
+linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
+> download-asset os-arch --linux Linux
+Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+>
+>
 
 
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+> download-asset os-arch
+linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
+> download-asset os-arch --linux Linux
+Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
+>
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
+> download-asset os-arch
+linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
+> download-asset os-arch --linux Linux
+Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
+> download-asset os-arch --linux Linux --arm64 AArch64
+Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern ''
 
-
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern ''
 
-
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{}}'
 
-
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{}}'
 
-
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}}'
 
-
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}}'
 
-
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on '
 
-
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{}}'
 
-
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{}}'
 
-
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{.Arch}}'
 
-
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{.Arch}}'
 Linux running on AArch64
->
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{.Arch}}'
 Linux running on AArch64
->
-
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
 > download-asset os-arch --help | less
+>
+> # Get the *current* OS and CPU architecture...
 > download-asset os-arch
 linux/arm64
+>
+> # When the current OS matches 'linux', return a different value...
 > download-asset os-arch --linux Linux
 Linux/arm64
+>
+> # When the current CPU architecture matches 'arm64', return a different value...
 > download-asset os-arch --linux Linux --arm64 AArch64
 Linux/AArch64
+>
+> # Instead of {os}/{arch}, use a different pattern for matches...
 > download-asset os-arch --linux Linux --arm64 AArch64 --pattern '{{.OS}} running on {{.Arch}}'
 Linux running on AArch64
->
-logout
-
-
-
-
-
-
-
 ────────────────────────────────────────────────────────────────────────────────

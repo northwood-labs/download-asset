@@ -387,6 +387,14 @@ Others can be requested if we have a real-world repository to test against.
 
 ## Usage without GitHub
 
+### Get OS/Arch
+
 If you are not downloading from GitHub, this can still be useful for providing the OS and CPU Architecture names, that you can pass to a custom script that downloads assets from elsewhere. For this, use the `os-arch` subcommand.
 
 ![](recording/os-arch.gif)
+
+### Get latest release/tag
+
+If you only need to know the latest release (or tag), you can use the `latest-tag` subcommand.
+
+![](recording/latest-tag.gif)

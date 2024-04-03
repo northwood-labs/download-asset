@@ -21,6 +21,8 @@ Set TypingSpeed 75ms
 Set CursorBlink true
 
 Sleep 1s
+Type "# View the help for the tool..."
+Enter
 Type "download-asset os-arch --help | less"
 Sleep 500ms
 Enter
@@ -35,19 +37,31 @@ Space
 Type q
 
 Sleep 1s
+Enter
+Type "# Get the *current* OS and CPU architecture..."
+Enter
 Type "download-asset os-arch"
 Sleep 500ms
 Enter
 
 Sleep 1s
+Enter
+Type "# When the current OS matches 'linux', return a different value..."
+Enter
 Type "download-asset os-arch --linux Linux"
 Enter
 
 Sleep 1s
+Enter
+Type "# When the current CPU architecture matches 'arm64', return a different value..."
+Enter
 Type "download-asset os-arch --linux Linux --arm64 AArch64"
 Enter
 
 Sleep 1s
+Enter
+Type "# Instead of {os}/{arch}, use a different pattern for matches..."
+Enter
 Type "download-asset os-arch --linux Linux --arm64 AArch64 --pattern ''"
 Left
 Type "{{}}"

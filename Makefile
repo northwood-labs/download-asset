@@ -41,3 +41,4 @@ vhs-build:
 vhs:
 	docker run --rm -e GITHUB_TOKEN -v "$$PWD:/vhs" vhs:latest recording/os-arch.tape
 	docker run --rm -e GITHUB_TOKEN -v "$$PWD:/vhs" vhs:latest recording/get.tape
+	docker run --rm -e GITHUB_TOKEN -v "$$PWD:/vhs" vhs:latest recording/latest-tag.tape

@@ -1,0 +1,1479 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+
+
+Checks the GitHub API for the latest release for a repository. If the repository
+does not use the 'releases' feature, the latest Git tag is returned instead.
+
+If you would prefer the latest tag over the latest release, use the
+--skip-to-tags flag.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset latest-tag [flags]
+
+Flags:
+  -e, --endpoint string     The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more informa
+tion. (default "https://api.github.com")
+  -h, --help                help for latest-tag
+  -r, --owner-repo string   The owner and repository name in the format of 'owner/repo'.
+────────────────────────────────────────────────────────────────────────────────
+
+
+Checks the GitHub API for the latest release for a repository. If the repository
+does not use the 'releases' feature, the latest Git tag is returned instead.
+
+If you would prefer the latest tag over the latest release, use the
+--skip-to-tags flag.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset latest-tag [flags]
+
+Flags:
+  -e, --endpoint string     The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more informa
+tion. (default "https://api.github.com")
+  -h, --help                help for latest-tag
+  -r, --owner-repo string   The owner and repository name in the format of 'owner/repo'.
+────────────────────────────────────────────────────────────────────────────────
+
+
+Checks the GitHub API for the latest release for a repository. If the repository
+does not use the 'releases' feature, the latest Git tag is returned instead.
+
+If you would prefer the latest tag over the latest release, use the
+--skip-to-tags flag.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset latest-tag [flags]
+
+Flags:
+  -e, --endpoint string     The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more informa
+tion. (default "https://api.github.com")
+  -h, --help                help for latest-tag
+  -r, --owner-repo string   The owner and repository name in the format of 'owner/repo'.
+────────────────────────────────────────────────────────────────────────────────
+
+
+Checks the GitHub API for the latest release for a repository. If the repository
+does not use the 'releases' feature, the latest Git tag is returned instead.
+
+If you would prefer the latest tag over the latest release, use the
+--skip-to-tags flag.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset latest-tag [flags]
+
+Flags:
+  -e, --endpoint string     The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more informa
+tion. (default "https://api.github.com")
+  -h, --help                help for latest-tag
+  -r, --owner-repo string   The owner and repository name in the format of 'owner/repo'.
+────────────────────────────────────────────────────────────────────────────────
+
+
+Checks the GitHub API for the latest release for a repository. If the repository
+does not use the 'releases' feature, the latest Git tag is returned instead.
+
+If you would prefer the latest tag over the latest release, use the
+--skip-to-tags flag.
+
+--------------------------------------------------------------------------------
+
+Usage:
+  download-asset latest-tag [flags]
+
+Flags:
+  -e, --endpoint string     The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more informa
+tion. (default "https://api.github.com")
+  -h, --help                help for latest-tag
+  -r, --owner-repo string   The owner and repository name in the format of 'owner/repo'.
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+>
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+>
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
+> # View the help for the tool...
+> download-asset latest-tag --help | less
+>
+> # Get the latest 'release' of OpenTofu...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu'
+1.6.2
+>
+> # With verbose logging...
+> download-asset latest-tag --owner-repo 'opentofu/opentofu' --verbose
+ VERBOSE
+ GitHub endpoint: https://api.github.com
+ GitHub token:    ghp_Qpp5.................................
+ Owner:           opentofu
+ Repository:      opentofu
+ Latest release:  1.6.2
+
+1.6.2
+>
+────────────────────────────────────────────────────────────────────────────────
