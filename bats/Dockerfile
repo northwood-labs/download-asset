@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM --platform=$TARGETPLATFORM golang:1.22-alpine AS base
+FROM --platform=$TARGETPLATFORM golang:1.22-alpine@sha256:cdc86d9f363e8786845bea2040312b4efa321b828acdeb26f393faa864d887b0 AS base
 
 COPY download-asset.toml /etc/download-asset/download-asset.toml
 
@@ -124,7 +124,7 @@ RUN --mount=type=secret,id=GITHUB_TOKEN GITHUB_TOKEN="$(cat /run/secrets/GITHUB_
 #-------------------------------------------------------------------------------
 
 # syntax=docker/dockerfile:1
-FROM --platform=$TARGETPLATFORM ubuntu:22.04 AS final
+FROM --platform=$TARGETPLATFORM ubuntu:22.04@sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e AS final
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y install file --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 COPY --from=trivy /usr/local/bin/trivy /usr/local/bin/trivy
