@@ -19,10 +19,10 @@ import (
 	"fmt"
 	"html/template"
 	"os"
-	"runtime"
 	"strings"
 	"text/tabwriter"
 
+	"github.com/charmbracelet/lipgloss"
 	gh "github.com/google/go-github/v60/github"
 	"github.com/northwood-labs/download-asset/github"
 	"github.com/northwood-labs/golang-utils/exiterrorf"
@@ -56,10 +56,10 @@ var (
 	fIntel32  string
 	fIntel64  string
 	fLoong64  string
-	fMIPS     string
+	fMIPS32   string
 	fMIPS64   string
 	fMIPS64LE string
-	fMIPSle   string
+	fMIPS32LE string
 	fPPC64    string
 	fPPC64LE  string
 	fRiscV64  string
@@ -72,13 +72,46 @@ var (
 	currentOS  string
 	currentCPU string
 
+	textUnderline = lipgloss.NewStyle().
+			Bold(true).
+			Border(lipgloss.RoundedBorder()).
+			Padding(0, 1) // lint:allow_raw_number
+
 	// getCmd represents the get command
 	getCmd = &cobra.Command{
 		Use:   "get",
 		Short: "Download an asset from a GitHub release",
-		Long: `Download an asset from a GitHub release.
+		Long: LongHelpText(`
+		Download an asset from a GitHub release.
 
---------------------------------------------------------------------------------`,
+		Can identify the current OS and current CPU architecture, then allows you to
+		replace those matches with a more appropriate pattern to download the correct
+		asset.
+
+		--------------------------------------------------------------------------------
+
+		Supported variables are {{.Ver}}, {{.OS}}, {{.Arch}}, and {{.Ext}}. These can
+		be used with:
+		    --pattern, --archive-path, --write-to-bin.
+
+		Set --archive-path to the path of the binary inside of a compressed archive.
+		Leave blank if the release asset is a binary itself.
+
+		Set --write-to-bin to the name of the final binary. Will attempt to save to
+		/usr/local/bin/NAME, but will fall back to $HOME/bin/NAME if /usr/local/bin is
+		not writable.
+
+		See https://bit.ly/3P1O9Rt for more information about setting GitHub API endpoints
+		for GitHub Enterprise Server.
+
+		--------------------------------------------------------------------------------
+
+		Less common operating system flags not listed below are:
+		    --dragonfly, --freebsd, --illumos, --netbsd, --openbsd, --plan9, --solaris
+
+		Less common CPU architecture flags not listed below are:
+		    --loong64, --mips32, --mips32le, --mips64, --mips64le, --ppc64, --ppc64le,
+		    --riscv64`),
 		Run: func(cmd *cobra.Command, args []string) {
 			if apiToken == "" {
 				exiterrorf.ExitErrorf(errors.New("GitHub token not found; set GITHUB_TOKEN environment variable"))
@@ -90,7 +123,7 @@ var (
 			}
 
 			if fVerbose {
-				colorHeader.Println(" VERBOSE ")
+				fmt.Println(headerStyle.Render("VERBOSE"))
 			}
 
 			w := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', 0)
@@ -162,60 +195,9 @@ var (
 				}
 			}
 
-			switch runtime.GOOS {
-			case "darwin":
-				currentOS = fDarwin
-			case "dragonfly":
-				currentOS = fDragonfly
-			case "freebsd":
-				currentOS = fFreeBSD
-			case "illumos":
-				currentOS = fIllumos
-			case "linux":
-				currentOS = fLinux
-			case "netbsd":
-				currentOS = fNetBSD
-			case "openbsd":
-				currentOS = fOpenBSD
-			case "plan9":
-				currentOS = fPlan9
-			case "solaris":
-				currentOS = fSolaris
-			case "windows":
-				currentOS = fWindows
-			default:
-				exiterrorf.ExitErrorf(errors.New("unknown operating system"))
-			}
-
-			switch runtime.GOARCH {
-			case "arm":
-				currentCPU = fArm32
-			case "arm64":
-				currentCPU = fArm64
-			case "386":
-				currentCPU = fIntel32
-			case "amd64":
-				currentCPU = fIntel64
-			case "loong64":
-				currentCPU = fLoong64
-			case "mips":
-				currentCPU = fMIPS
-			case "mips64":
-				currentCPU = fMIPS64
-			case "mips64le":
-				currentCPU = fMIPS64LE
-			case "mipsle":
-				currentCPU = fMIPSle
-			case "ppc64":
-				currentCPU = fPPC64
-			case "ppc64le":
-				currentCPU = fPPC64LE
-			case "riscv64":
-				currentCPU = fRiscV64
-			case "s390x":
-				currentCPU = fS390x
-			default:
-				exiterrorf.ExitErrorf(errors.New("unknown CPU architecture"))
+			err = handleCurrentOSArch()
+			if err != nil {
+				exiterrorf.ExitErrorf(err)
 			}
 
 			patternVars := PatternMatches{
@@ -295,9 +277,9 @@ var (
 
 			fmt.Printf(
 				"Downloaded %s; copied %s → %s\n",
-				colorUnderlined.Sprintf(name),
-				colorUnderlined.Sprintf(resolvedArchivePath),
-				colorUnderlined.Sprintf(binPath),
+				textUnderline.Render(name),
+				textUnderline.Render(resolvedArchivePath),
+				textUnderline.Render(binPath),
 			)
 
 			err = archiveStream.Close()
@@ -331,7 +313,7 @@ func init() {
 		"endpoint",
 		"e",
 		"https://api.github.com",
-		"The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more information.",
+		"The GitHub API domain to use.",
 	)
 	getCmd.Flags().StringVarP(
 		&fTag,
@@ -345,8 +327,7 @@ func init() {
 		"pattern",
 		"p",
 		"",
-		"The naming pattern of the asset name to match. Supports a substring or regexp. "+
-			"Supported variables are .Ver, .OS, .Arch, and .Ext.",
+		"The naming pattern of the asset name to match.",
 	)
 	getCmd.Flags().BoolVarP(
 		&fVerbose,
@@ -367,174 +348,10 @@ func init() {
 		"write-to-bin",
 		"w",
 		"",
-		"The final name of the binary. Will attempt to save to /usr/local/bin/NAME, but will fall back "+
-			"to $HOME/bin/NAME if /usr/local/bin is not writable.",
+		"The final name of the binary.",
 	)
 
-	// OS-specific options.
-	getCmd.Flags().StringVarP(
-		&fDarwin,
-		"darwin",
-		"",
-		"darwin",
-		"When the current OS is Darwin, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fDragonfly,
-		"dragonfly",
-		"",
-		"dragonfly",
-		"When the current OS is Dragonfly, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fFreeBSD,
-		"freebsd",
-		"",
-		"freebsd",
-		"When the current OS is FreeBSD, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fIllumos,
-		"illumos",
-		"",
-		"illumos",
-		"When the current OS is Illumos, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fLinux,
-		"linux",
-		"",
-		"linux",
-		"When the current OS is Linux, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fNetBSD,
-		"netbsd",
-		"",
-		"netbsd",
-		"When the current OS is NetBSD, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fOpenBSD,
-		"openbsd",
-		"",
-		"openbsd",
-		"When the current OS is OpenBSD, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fPlan9,
-		"plan9",
-		"",
-		"plan9",
-		"When the current OS is Plan9, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fSolaris,
-		"solaris",
-		"",
-		"solaris",
-		"When the current OS is Solaris, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fWindows,
-		"windows",
-		"",
-		"windows",
-		"When the current OS is Windows, use this value when looking up the correct asset.",
-	)
-
-	// CPU Arch-specific options.
-	getCmd.Flags().StringVarP(
-		&fArm32,
-		"arm32",
-		"",
-		"arm",
-		"When the current CPU architecture is 32-bit ARM, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fArm64,
-		"arm64",
-		"",
-		"arm64",
-		"When the current CPU architecture is 64-bit ARM, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fIntel32,
-		"intel32",
-		"",
-		"386",
-		"When the current CPU architecture is 32-bit Intel-compatible, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fIntel64,
-		"intel64",
-		"",
-		"amd64",
-		"When the current CPU architecture is 64-bit Intel-compatible, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fLoong64,
-		"loong64",
-		"",
-		"loong64",
-		"When the current CPU architecture is 64-bit Loongson, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fMIPS,
-		"mips32",
-		"",
-		"mips",
-		"When the current CPU architecture is 32-bit MIPS, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fMIPSle,
-		"mips32-le",
-		"",
-		"mipsle",
-		"When the current CPU architecture is 32-bit MIPS (LE), use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fMIPS64,
-		"mips64",
-		"",
-		"mips64",
-		"When the current CPU architecture is 64-bit MIPS, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fMIPS64LE,
-		"mips64-le",
-		"",
-		"mips64le",
-		"When the current CPU architecture is 64-bit MIPS (LE), use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fPPC64,
-		"ppc64",
-		"",
-		"ppc64",
-		"When the current CPU architecture is 64-bit PowerPC, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fPPC64LE,
-		"ppc64le",
-		"",
-		"ppc64le",
-		"When the current CPU architecture is 64-bit PowerPC (LE), use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fRiscV64,
-		"riscv64",
-		"",
-		"riscv64",
-		"When the current CPU architecture is 64-bit RISC-V, use this value when looking up the correct asset.",
-	)
-	getCmd.Flags().StringVarP(
-		&fS390x,
-		"s390x",
-		"",
-		"s390x",
-		"When the current CPU architecture is 64-bit s390x, use this value when looking up the correct asset.",
-	)
+	handleFlags(getCmd)
 }
 
 func replacePatternVariables(pattern string, patternVars PatternMatches) (string, error) {
@@ -601,8 +418,8 @@ func applyConfigValues(ownerRepo []string) {
 			"intel32":   &fIntel32,
 			"intel64":   &fIntel64,
 			"loong64":   &fLoong64,
-			"mips32":    &fMIPS,
-			"mips32-le": &fMIPSle,
+			"mips32":    &fMIPS32,
+			"mips32-le": &fMIPS32LE,
 			"mips64":    &fMIPS64,
 			"mips64-le": &fMIPS64LE,
 			"ppc64":     &fPPC64,

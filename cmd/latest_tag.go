@@ -38,20 +38,24 @@ var (
 	latestTagCmd = &cobra.Command{
 		Use:   "latest-tag",
 		Short: "Checks GitHub for the latest release or tag for a package",
-		Long: `Checks the GitHub API for the latest release for a repository. If the repository
-does not use the 'releases' feature, the latest Git tag is returned instead.
+		Long: LongHelpText(`
+		Checks the GitHub API for the latest release for a repository. If the repository
+		does not use the 'releases' feature, the latest Git tag is returned instead.
 
-If you would prefer the latest tag over the latest release, use the
---skip-to-tags flag.
+		If you would prefer the latest tag over the latest release, use the
+		--skip-to-tags flag.
 
---------------------------------------------------------------------------------`,
+		--------------------------------------------------------------------------------
+
+		See https://bit.ly/3P1O9Rt for more information about setting GitHub API endpoints
+		for GitHub Enterprise Server.`),
 		Run: func(cmd *cobra.Command, args []string) {
 			if apiToken == "" {
 				exiterrorf.ExitErrorf(errors.New("GitHub token not found; set GITHUB_TOKEN environment variable"))
 			}
 
 			if fVerbose {
-				colorHeader.Println(" VERBOSE ")
+				fmt.Println(headerStyle.Render("VERBOSE"))
 			}
 
 			w := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', 0)
@@ -136,7 +140,7 @@ func init() {
 		"endpoint",
 		"e",
 		"https://api.github.com",
-		"The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more information.",
+		"The GitHub API domain to use.",
 	)
 	latestTagCmd.Flags().BoolVarP(
 		&fVerbose,
@@ -157,6 +161,6 @@ func init() {
 		"skip-to-tags",
 		"t",
 		false,
-		"Skip looking up releases, and just look at tags.",
+		"Skip looking up releases and just look at tags.",
 	)
 }

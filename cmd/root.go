@@ -16,25 +16,25 @@ package cmd
 
 import (
 	"os"
+	"strings"
 
+	"github.com/charmbracelet/lipgloss"
+	"github.com/lithammer/dedent"
 	"github.com/spf13/cobra"
 )
 
-var (
-	// rootCmd represents the base command when called without any subcommands
-	rootCmd = &cobra.Command{
-		Use:   "download-asset",
-		Short: "Downloads release assets from GitHub.",
-		Long: `--------------------------------------------------------------------------------
-download-asset
+// rootCmd represents the base command when called without any subcommands
+var rootCmd = &cobra.Command{
+	Use:   "download-asset",
+	Short: "Downloads release assets from GitHub.",
+	Long: LongHelpText(`
+	download-asset
 
-Downloads release assets from GitHub.
+	Downloads release assets from GitHub.
 
-Simplifies the process of downloading release assets from GitHub for the current
-operating system and current CPU architecture.
---------------------------------------------------------------------------------`,
-	}
-)
+	Simplifies the process of downloading release assets from GitHub for the current
+	operating system and current CPU architecture.`),
+}
 
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
@@ -43,4 +43,17 @@ func Execute() {
 	if err != nil {
 		os.Exit(1)
 	}
+}
+
+func LongHelpText(text string) string {
+	helpText := lipgloss.NewStyle().
+		Border(lipgloss.RoundedBorder()).
+		BorderForeground(lipgloss.Color("99")).
+		Padding(1, 2) // lint:allow_raw_number
+
+	return helpText.Render(
+		strings.TrimSpace(
+			dedent.Dedent(text),
+		),
+	)
 }
