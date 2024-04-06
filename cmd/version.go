@@ -55,8 +55,6 @@ var (
 		Long-form version information, including the build commit hash, build date, Go
 		version, and external dependencies.`),
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println(headerStyle.Render("BUILD INFO"))
-
 			t := table.New().
 				Border(lipgloss.RoundedBorder()).
 				BorderStyle(lipgloss.NewStyle().Foreground(lipgloss.Color("99"))).
@@ -64,7 +62,7 @@ var (
 				StyleFunc(func(row, col int) lipgloss.Style {
 					return lipgloss.NewStyle().Padding(0, 1)
 				}).
-				Headers("FIELD", "VALUE")
+				Headers("BUILD INFO", "VALUE")
 
 			t.Row("Version", Version)
 			t.Row("Go version", runtime.Version())
@@ -85,8 +83,6 @@ var (
 			//----------------------------------------------------------------------
 
 			if buildInfo, ok := debug.ReadBuildInfo(); ok {
-				fmt.Println(headerStyle.Render("DEPENDENCIES"))
-
 				td := table.New().
 					Border(lipgloss.RoundedBorder()).
 					BorderStyle(lipgloss.NewStyle().Foreground(lipgloss.Color("99"))).

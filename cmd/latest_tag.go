@@ -16,10 +16,10 @@ package cmd
 
 import (
 	"fmt"
-	"os"
 	"strings"
-	"text/tabwriter"
 
+	"github.com/charmbracelet/lipgloss"
+	"github.com/charmbracelet/lipgloss/table"
 	"github.com/hashicorp/go-version"
 	"github.com/northwood-labs/download-asset/github"
 	"github.com/northwood-labs/golang-utils/exiterrorf"
@@ -54,17 +54,20 @@ var (
 				exiterrorf.ExitErrorf(errors.New("GitHub token not found; set GITHUB_TOKEN environment variable"))
 			}
 
-			if fVerbose {
-				fmt.Println(headerStyle.Render("VERBOSE"))
-			}
-
-			w := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', 0)
+			t := table.New().
+				Border(lipgloss.RoundedBorder()).
+				BorderStyle(lipgloss.NewStyle().Foreground(lipgloss.Color("99"))).
+				BorderColumn(true).
+				StyleFunc(func(row, col int) lipgloss.Style {
+					return lipgloss.NewStyle().Padding(0, 1)
+				}).
+				Headers("FIELD", "VALUE")
 
 			apiEndpoint, _, _ = github.ParseDomain(fEndpoint)
 
 			if fVerbose {
-				fmt.Fprintf(w, " GitHub endpoint:\t%s\t\n", apiEndpoint)
-				fmt.Fprintf(w, " GitHub token:\t%s\t\n", apiToken[0:8]+".................................")
+				t.Row("GitHub endpoint", apiEndpoint)
+				t.Row("GitHub token", apiToken[0:8]+".................................")
 			}
 
 			client, err := github.NewClient(&github.NewClientInput{
@@ -81,8 +84,8 @@ var (
 			}
 
 			if fVerbose {
-				fmt.Fprintf(w, " Owner:\t%s\t\n", ownerRepo[0])
-				fmt.Fprintf(w, " Repository:\t%s\t\n", ownerRepo[1])
+				t.Row("Owner", ownerRepo[0])
+				t.Row("Repository", ownerRepo[1])
 			}
 
 			if fSkipToTags {
@@ -106,13 +109,9 @@ var (
 			}
 
 			if fVerbose {
-				fmt.Fprintf(w, " Latest release:\t%s\t\n", tag)
-				fmt.Fprintln(w, "")
-			}
+				t.Row("Latest release", tag)
 
-			err = w.Flush()
-			if err != nil {
-				exiterrorf.ExitErrorf(err)
+				fmt.Println(t.Render())
 			}
 
 			if fStrip {

@@ -16,9 +16,9 @@ package cmd
 
 import (
 	"fmt"
-	"os"
-	"text/tabwriter"
 
+	"github.com/charmbracelet/lipgloss"
+	"github.com/charmbracelet/lipgloss/table"
 	"github.com/northwood-labs/golang-utils/exiterrorf"
 	"github.com/spf13/cobra"
 )
@@ -61,19 +61,22 @@ var osArchCmd = &cobra.Command{
 			exiterrorf.ExitErrorf(err)
 		}
 
-		w := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', 0)
+		t := table.New().
+			Border(lipgloss.RoundedBorder()).
+			BorderStyle(lipgloss.NewStyle().Foreground(lipgloss.Color("99"))).
+			BorderColumn(true).
+			StyleFunc(func(row, col int) lipgloss.Style {
+				return lipgloss.NewStyle().Padding(0, 1)
+			}).
+			Headers("FIELD", "VALUE")
 
 		if fVerbose {
-			fmt.Fprintf(w, " Current OS ident:\t%s\t\n", currentOS)
-			fmt.Fprintf(w, " Current CPU ident:\t%s\t\n", currentCPU)
-			fmt.Fprintf(w, " Asset pattern:\t%s\t\n", fPattern)
-			fmt.Fprintf(w, " Resolved pattern:\t%s\t\n", resolvedAssetPattern)
-			fmt.Fprintln(w, "")
-		}
+			t.Row("Current OS ident", currentOS)
+			t.Row("Current CPU ident", currentCPU)
+			t.Row("Raw pattern", fPattern)
+			t.Row("Resolved pattern", resolvedAssetPattern)
 
-		err = w.Flush()
-		if err != nil {
-			exiterrorf.ExitErrorf(err)
+			fmt.Println(t.Render())
 		}
 
 		fmt.Println(resolvedAssetPattern)

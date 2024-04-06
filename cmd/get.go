@@ -129,10 +129,6 @@ var (
 				}).
 				Headers("FIELD", "VALUE")
 
-			if fVerbose {
-				fmt.Println(headerStyle.Render("VERBOSE"))
-			}
-
 			apiEndpoint, _, _ = github.ParseDomain(fEndpoint)
 
 			if fVerbose {
@@ -263,9 +259,9 @@ var (
 				t.Row("Matched asset name", name)
 				t.Row("File inside archive", resolvedArchivePath)
 				t.Row("Binary added to PATH", fWriteToBin)
-			}
 
-			fmt.Println(t.Render())
+				fmt.Println(t.Render())
+			}
 
 			binPath, err := github.DownloadStream(archiveStream, name, resolvedArchivePath, fWriteToBin)
 			if err != nil {
