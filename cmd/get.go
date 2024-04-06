@@ -20,9 +20,9 @@ import (
 	"html/template"
 	"os"
 	"strings"
-	"text/tabwriter"
 
 	"github.com/charmbracelet/lipgloss"
+	"github.com/charmbracelet/lipgloss/table"
 	gh "github.com/google/go-github/v60/github"
 	"github.com/northwood-labs/download-asset/github"
 	"github.com/northwood-labs/golang-utils/exiterrorf"
@@ -73,9 +73,7 @@ var (
 	currentCPU string
 
 	textUnderline = lipgloss.NewStyle().
-			Bold(true).
-			Border(lipgloss.RoundedBorder()).
-			Padding(0, 1) // lint:allow_raw_number
+			Underline(true)
 
 	// getCmd represents the get command
 	getCmd = &cobra.Command{
@@ -122,17 +120,24 @@ var (
 				exiterrorf.ExitErrorf(err)
 			}
 
+			t := table.New().
+				Border(lipgloss.RoundedBorder()).
+				BorderStyle(lipgloss.NewStyle().Foreground(lipgloss.Color("99"))).
+				BorderColumn(true).
+				StyleFunc(func(row, col int) lipgloss.Style {
+					return lipgloss.NewStyle().Padding(0, 1)
+				}).
+				Headers("FIELD", "VALUE")
+
 			if fVerbose {
 				fmt.Println(headerStyle.Render("VERBOSE"))
 			}
 
-			w := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', 0)
-
 			apiEndpoint, _, _ = github.ParseDomain(fEndpoint)
 
 			if fVerbose {
-				fmt.Fprintf(w, " GitHub endpoint:\t%s\t\n", apiEndpoint)
-				fmt.Fprintf(w, " GitHub token:\t%s\t\n", apiToken[0:8]+".................................")
+				t.Row("GitHub endpoint", apiEndpoint)
+				t.Row("GitHub token", apiToken[0:8]+".................................")
 			}
 
 			client, err := github.NewClient(&github.NewClientInput{
@@ -149,11 +154,10 @@ var (
 			}
 
 			if fVerbose {
-				fmt.Fprintf(w, " Owner:\t%s\t\n", ownerRepo[0])
-				fmt.Fprintf(w, " Repository:\t%s\t\n", ownerRepo[1])
-
+				t.Row("Owner", ownerRepo[0])
+				t.Row("Repository", ownerRepo[1])
 				if viper.ConfigFileUsed() != "" {
-					fmt.Fprintf(w, " Config file:\t%s\t\n", viper.ConfigFileUsed())
+					t.Row("Config file", viper.ConfigFileUsed())
 				}
 			}
 
@@ -167,7 +171,7 @@ var (
 				}
 
 				if fVerbose {
-					fmt.Fprintf(w, " Latest release:\t%s\t\n", *release.TagName)
+					t.Row("Latest release", *release.TagName)
 				}
 			} else {
 				toTry := []string{
@@ -188,10 +192,6 @@ var (
 
 				if err != nil {
 					exiterrorf.ExitErrorf(errors.Wrap(err, "failed to discover the release"))
-				}
-
-				if fVerbose {
-					fmt.Fprintf(w, " Selected release:\t%s\t\n", *release.TagName)
 				}
 			}
 
@@ -237,26 +237,15 @@ var (
 			}
 
 			if fVerbose {
-				fmt.Fprintf(w, " Current OS ident:\t%s\t\n", currentOS)
-				fmt.Fprintf(w, " Current CPU ident:\t%s\t\n", currentCPU)
-				fmt.Fprintf(w, " Asset pattern:\t%s\t\n", fPattern)
-				fmt.Fprintf(w, " Resolved pattern:\t%s\t\n", resolvedAssetPattern)
-			}
-
-			err = w.Flush()
-			if err != nil {
-				exiterrorf.ExitErrorf(err)
+				t.Row("Current OS ident", currentOS)
+				t.Row("Current CPU ident", currentCPU)
+				t.Row("Asset pattern", fPattern)
+				t.Row("Resolved pattern", resolvedAssetPattern)
 			}
 
 			// Check that we have everything before we trigger downloads
 			if fPattern == "" || fWriteToBin == "" {
 				exiterrorf.ExitErrorf(errors.New("missing one of pattern or write-to-bin"))
-			}
-
-			if fVerbose {
-				fmt.Fprintf(w, " File inside archive:\t%s\t\n", resolvedArchivePath)
-				fmt.Fprintf(w, " Binary added to PATH:\t%s\t\n", fWriteToBin)
-				fmt.Fprintln(w, "")
 			}
 
 			// Ready to download the asset
@@ -270,17 +259,33 @@ var (
 				exiterrorf.ExitErrorf(err)
 			}
 
+			if fVerbose {
+				t.Row("Matched asset name", name)
+				t.Row("File inside archive", resolvedArchivePath)
+				t.Row("Binary added to PATH", fWriteToBin)
+			}
+
+			fmt.Println(t.Render())
+
 			binPath, err := github.DownloadStream(archiveStream, name, resolvedArchivePath, fWriteToBin)
 			if err != nil {
 				exiterrorf.ExitErrorf(err)
 			}
 
-			fmt.Printf(
-				"Downloaded %s; copied %s → %s\n",
-				textUnderline.Render(name),
-				textUnderline.Render(resolvedArchivePath),
-				textUnderline.Render(binPath),
-			)
+			if resolvedArchivePath == "" {
+				fmt.Printf(
+					"Downloaded %s; renamed name → %s\n",
+					textUnderline.Render(name),
+					textUnderline.Render(binPath),
+				)
+			} else {
+				fmt.Printf(
+					"Downloaded %s; copied %s → %s\n",
+					textUnderline.Render(name),
+					textUnderline.Render(resolvedArchivePath),
+					textUnderline.Render(binPath),
+				)
+			}
 
 			err = archiveStream.Close()
 			if err != nil {

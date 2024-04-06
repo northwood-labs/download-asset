@@ -129,7 +129,10 @@ func handleTar(g io.Reader, findPattern, writeToBin string) (string, error) {
 		}
 
 		if hdr.Typeflag == tar.TypeReg {
+			hdr.Name = strings.TrimPrefix(hdr.Name, "./")
+
 			if !strings.EqualFold(hdr.Name, findPattern) {
+				// fmt.Println(hdr.Name)
 				continue
 			}
 
