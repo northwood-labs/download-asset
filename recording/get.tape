@@ -21,27 +21,11 @@ Set TypingSpeed 75ms
 Set CursorBlink true
 
 Sleep 1s
-Type "download-asset get --help | less"
-Sleep 500ms
-Enter
-Sleep 2s
-Space
-Sleep 2s
-Space
-Sleep 2s
-Space
-Sleep 2s
-Space
-Sleep 2s
-Space
-Type q
-
-Sleep 1s
 Hide
 Type "clear"
 Enter
 Show
-Type "download-asset get --verbose --owner-repo opentofu/opentofu"
+Type "download-asset get --verbose --owner-repo opentofu/opentofu --constraint '~> 1.6.0'"
 Sleep 500ms
 Enter
 
@@ -52,7 +36,7 @@ Hide
 Type "clear"
 Enter
 Show
-Type "download-asset get --verbose --owner-repo gruntwork-io/terragrunt"
+Type "download-asset get --verbose --owner-repo gruntwork-io/terragrunt --constraint '< 0.57.0'"
 Sleep 500ms
 Enter
 

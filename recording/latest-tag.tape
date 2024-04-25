@@ -21,18 +21,6 @@ Set TypingSpeed 75ms
 Set CursorBlink true
 
 Sleep 1s
-Type "# View the help for the tool..."
-Enter
-Type "download-asset latest-tag --help | less"
-Sleep 500ms
-Enter
-Sleep 2s
-Space
-Sleep 2s
-Space
-Type q
-
-Sleep 1s
 Enter
 Type "# Get the latest 'release' of OpenTofu..."
 Enter
@@ -63,6 +51,13 @@ Enter
 
 Sleep 1s
 Type "download-asset latest-tag --owner-repo 'hashicorp/terraform' --skip-to-tags"
+Enter
+
+Sleep 1s
+Enter
+Type "# Let's add a version constraint..."
+Enter
+Type "download-asset latest-tag --owner-repo 'hashicorp/terraform' --constraint '< 1.6.0'"
 Enter
 
 Sleep 1s

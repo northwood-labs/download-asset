@@ -603,291 +603,6 @@
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --help | less
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-────────────────────────────────────────────────────────────────────────────────
-> download-asset get --help | less
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-────────────────────────────────────────────────────────────────────────────────
-
-Download an asset from a GitHub release.
-
---------------------------------------------------------------------------------
-
-Usage:
-  download-asset get [flags]
-
-Flags:
-  -a, --archive-path string   The path to the file inside the archive.
-      --arm32 string          When the current CPU architecture is 32-bit ARM, use this value when lo
-oking up the correct asset. (default "arm")
-      --arm64 string          When the current CPU architecture is 64-bit ARM, use this value when lo
-oking up the correct asset. (default "arm64")
-      --darwin string         When the current OS is Darwin, use this value when looking up the corre
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-────────────────────────────────────────────────────────────────────────────────
-
-Download an asset from a GitHub release.
-
---------------------------------------------------------------------------------
-
-Usage:
-  download-asset get [flags]
-
-Flags:
-  -a, --archive-path string   The path to the file inside the archive.
-      --arm32 string          When the current CPU architecture is 32-bit ARM, use this value when lo
-oking up the correct asset. (default "arm")
-      --arm64 string          When the current CPU architecture is 64-bit ARM, use this value when lo
-oking up the correct asset. (default "arm64")
-      --darwin string         When the current OS is Darwin, use this value when looking up the corre
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-────────────────────────────────────────────────────────────────────────────────
-
-Download an asset from a GitHub release.
-
---------------------------------------------------------------------------------
-
-Usage:
-  download-asset get [flags]
-
-Flags:
-  -a, --archive-path string   The path to the file inside the archive.
-      --arm32 string          When the current CPU architecture is 32-bit ARM, use this value when lo
-oking up the correct asset. (default "arm")
-      --arm64 string          When the current CPU architecture is 64-bit ARM, use this value when lo
-oking up the correct asset. (default "arm64")
-      --darwin string         When the current OS is Darwin, use this value when looking up the corre
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-────────────────────────────────────────────────────────────────────────────────
-
-Download an asset from a GitHub release.
-
---------------------------------------------------------------------------------
-
-Usage:
-  download-asset get [flags]
-
-Flags:
-  -a, --archive-path string   The path to the file inside the archive.
-      --arm32 string          When the current CPU architecture is 32-bit ARM, use this value when lo
-oking up the correct asset. (default "arm")
-      --arm64 string          When the current CPU architecture is 64-bit ARM, use this value when lo
-oking up the correct asset. (default "arm64")
-      --darwin string         When the current OS is Darwin, use this value when looking up the corre
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-────────────────────────────────────────────────────────────────────────────────
-Download an asset from a GitHub release.
-
---------------------------------------------------------------------------------
-
-Usage:
-  download-asset get [flags]
-
-Flags:
-  -a, --archive-path string   The path to the file inside the archive.
-      --arm32 string          When the current CPU architecture is 32-bit ARM, use this value when lo
-oking up the correct asset. (default "arm")
-      --arm64 string          When the current CPU architecture is 64-bit ARM, use this value when lo
-oking up the correct asset. (default "arm64")
-      --darwin string         When the current OS is Darwin, use this value when looking up the corre
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-  -e, --endpoint string       The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more infor
-────────────────────────────────────────────────────────────────────────────────
-Download an asset from a GitHub release.
-
---------------------------------------------------------------------------------
-
-Usage:
-  download-asset get [flags]
-
-Flags:
-  -a, --archive-path string   The path to the file inside the archive.
-      --arm32 string          When the current CPU architecture is 32-bit ARM, use this value when lo
-oking up the correct asset. (default "arm")
-      --arm64 string          When the current CPU architecture is 64-bit ARM, use this value when lo
-oking up the correct asset. (default "arm64")
-      --darwin string         When the current OS is Darwin, use this value when looking up the corre
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-  -e, --endpoint string       The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more infor
-────────────────────────────────────────────────────────────────────────────────
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-  -e, --endpoint string       The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more infor
-mation. (default "https://api.github.com")
-      --freebsd string        When the current OS is FreeBSD, use this value when looking up the corr
-ect asset. (default "freebsd")
-  -h, --help                  help for get
-      --illumos string        When the current OS is Illumos, use this value when looking up the corr
-ect asset. (default "illumos")
-      --intel32 string        When the current CPU architecture is 32-bit Intel-compatible, use this
-value when looking up the correct asset. (default "386")
-      --intel64 string        When the current CPU architecture is 64-bit Intel-compatible, use this
-value when looking up the correct asset. (default "amd64")
-      --linux string          When the current OS is Linux, use this value when looking up the correc
-t asset. (default "linux")
-      --loong64 string        When the current CPU architecture is 64-bit Loongson, use this value wh
-en looking up the correct asset. (default "loong64")
-────────────────────────────────────────────────────────────────────────────────
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-  -e, --endpoint string       The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more infor
-mation. (default "https://api.github.com")
-      --freebsd string        When the current OS is FreeBSD, use this value when looking up the corr
-ect asset. (default "freebsd")
-  -h, --help                  help for get
-      --illumos string        When the current OS is Illumos, use this value when looking up the corr
-ect asset. (default "illumos")
-      --intel32 string        When the current CPU architecture is 32-bit Intel-compatible, use this
-value when looking up the correct asset. (default "386")
-      --intel64 string        When the current CPU architecture is 64-bit Intel-compatible, use this
-value when looking up the correct asset. (default "amd64")
-      --linux string          When the current OS is Linux, use this value when looking up the correc
-t asset. (default "linux")
-      --loong64 string        When the current CPU architecture is 64-bit Loongson, use this value wh
-en looking up the correct asset. (default "loong64")
-────────────────────────────────────────────────────────────────────────────────
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-  -e, --endpoint string       The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more infor
-mation. (default "https://api.github.com")
-      --freebsd string        When the current OS is FreeBSD, use this value when looking up the corr
-ect asset. (default "freebsd")
-  -h, --help                  help for get
-      --illumos string        When the current OS is Illumos, use this value when looking up the corr
-ect asset. (default "illumos")
-      --intel32 string        When the current CPU architecture is 32-bit Intel-compatible, use this
-value when looking up the correct asset. (default "386")
-      --intel64 string        When the current CPU architecture is 64-bit Intel-compatible, use this
-value when looking up the correct asset. (default "amd64")
-      --linux string          When the current OS is Linux, use this value when looking up the correc
-t asset. (default "linux")
-      --loong64 string        When the current CPU architecture is 64-bit Loongson, use this value wh
-en looking up the correct asset. (default "loong64")
-────────────────────────────────────────────────────────────────────────────────
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-  -e, --endpoint string       The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more infor
-mation. (default "https://api.github.com")
-      --freebsd string        When the current OS is FreeBSD, use this value when looking up the corr
-ect asset. (default "freebsd")
-  -h, --help                  help for get
-      --illumos string        When the current OS is Illumos, use this value when looking up the corr
-ect asset. (default "illumos")
-      --intel32 string        When the current CPU architecture is 32-bit Intel-compatible, use this
-value when looking up the correct asset. (default "386")
-      --intel64 string        When the current CPU architecture is 64-bit Intel-compatible, use this
-value when looking up the correct asset. (default "amd64")
-      --linux string          When the current OS is Linux, use this value when looking up the correc
-t asset. (default "linux")
-      --loong64 string        When the current CPU architecture is 64-bit Loongson, use this value wh
-en looking up the correct asset. (default "loong64")
-────────────────────────────────────────────────────────────────────────────────
-ct asset. (default "darwin")
-      --dragonfly string      When the current OS is Dragonfly, use this value when looking up the co
-rrect asset. (default "dragonfly")
-  -e, --endpoint string       The GitHub API domain to use. See https://bit.ly/3P1O9Rt for more infor
-mation. (default "https://api.github.com")
-      --freebsd string        When the current OS is FreeBSD, use this value when looking up the corr
-ect asset. (default "freebsd")
-  -h, --help                  help for get
-      --illumos string        When the current OS is Illumos, use this value when looking up the corr
-ect asset. (default "illumos")
-      --intel32 string        When the current CPU architecture is 32-bit Intel-compatible, use this
-value when looking up the correct asset. (default "386")
-      --intel64 string        When the current CPU architecture is 64-bit Intel-compatible, use this
-value when looking up the correct asset. (default "amd64")
-      --linux string          When the current OS is Linux, use this value when looking up the correc
-t asset. (default "linux")
-      --loong64 string        When the current CPU architecture is 64-bit Loongson, use this value wh
-en looking up the correct asset. (default "loong64")
-────────────────────────────────────────────────────────────────────────────────
-> download-asset get --help | less
->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-────────────────────────────────────────────────────────────────────────────────
-> download-asset get --help | less
->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-────────────────────────────────────────────────────────────────────────────────
 >
 
 
@@ -907,7 +622,7 @@ en looking up the correct asset. (default "loong64")
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo opentofu/opentofu
+> download-asset get --verbose --owner-repo opentofu/opentofu --constraint '~> 1.6.0'
 
 
 
@@ -926,7 +641,7 @@ en looking up the correct asset. (default "loong64")
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo opentofu/opentofu
+> download-asset get --verbose --owner-repo opentofu/opentofu --constraint '~> 1.6.0'
 
 
 
@@ -945,8 +660,8 @@ en looking up the correct asset. (default "loong64")
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo opentofu/opentofu
- VERBOSE
+> download-asset get --verbose --owner-repo opentofu/opentofu --constraint '~> 1.6.0'
+
 
 
 
@@ -964,43 +679,43 @@ en looking up the correct asset. (default "loong64")
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo opentofu/opentofu
- VERBOSE
- GitHub endpoint:   https://api.github.com
- GitHub token:      ghp_Qpp5.................................
- Owner:             opentofu
- Repository:        opentofu
- Config file:       /vhs/download-asset.toml
- Latest release:    v1.6.2
- Current OS ident:  linux
- Current CPU ident: arm64
- Asset pattern:     tofu_{{.Ver}}_{{.OS}}_{{.Arch}}.{{.Ext}}$
- Resolved pattern:  tofu_1.6.2_linux_arm64.(exe|gz|tar.bz2|tar.gz|tar.xz|tbz2|tgz|txz|zip)$
- File inside archive:  tofu
- Binary added to PATH: tofu
-
+> download-asset get --verbose --owner-repo opentofu/opentofu --constraint '~> 1.6.0'
+╭──────────────────────┬─────────────────────────────────────────────────────────────────────────╮
+│ FIELD                │ VALUE                                                                   │
+├──────────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│ GitHub endpoint      │ https://api.github.com                                                  │
+│ GitHub token         │ ghp_Qpp5.................................                               │
+│ Owner                │ opentofu                                                                │
+│ Repository           │ opentofu                                                                │
+│ Config file          │ /vhs/download-asset.toml                                                │
+│ Current OS ident     │ linux                                                                   │
+│ Current CPU ident    │ arm64                                                                   │
+│ Asset pattern        │ tofu_{{.Ver}}_{{.OS}}_{{.Arch}}.{{.Ext}}$                               │
+│ Resolved pattern     │ tofu_1.6.2_linux_arm64.(exe|gz|tar.bz2|tar.gz|tar.xz|tbz2|tgz|txz|zip)$ │
+│ Matched asset name   │ tofu_1.6.2_linux_arm64.zip                                              │
+│ File inside archive  │ tofu                                                                    │
+│ Binary added to PATH │ tofu                                                                    │
+╰──────────────────────┴─────────────────────────────────────────────────────────────────────────╯
 Downloaded tofu_1.6.2_linux_arm64.zip; copied tofu → /usr/local/bin/tofu
->
-
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo opentofu/opentofu
- VERBOSE
- GitHub endpoint:   https://api.github.com
- GitHub token:      ghp_Qpp5.................................
- Owner:             opentofu
- Repository:        opentofu
- Config file:       /vhs/download-asset.toml
- Latest release:    v1.6.2
- Current OS ident:  linux
- Current CPU ident: arm64
- Asset pattern:     tofu_{{.Ver}}_{{.OS}}_{{.Arch}}.{{.Ext}}$
- Resolved pattern:  tofu_1.6.2_linux_arm64.(exe|gz|tar.bz2|tar.gz|tar.xz|tbz2|tgz|txz|zip)$
- File inside archive:  tofu
- Binary added to PATH: tofu
-
+> download-asset get --verbose --owner-repo opentofu/opentofu --constraint '~> 1.6.0'
+╭──────────────────────┬─────────────────────────────────────────────────────────────────────────╮
+│ FIELD                │ VALUE                                                                   │
+├──────────────────────┼─────────────────────────────────────────────────────────────────────────┤
+│ GitHub endpoint      │ https://api.github.com                                                  │
+│ GitHub token         │ ghp_Qpp5.................................                               │
+│ Owner                │ opentofu                                                                │
+│ Repository           │ opentofu                                                                │
+│ Config file          │ /vhs/download-asset.toml                                                │
+│ Current OS ident     │ linux                                                                   │
+│ Current CPU ident    │ arm64                                                                   │
+│ Asset pattern        │ tofu_{{.Ver}}_{{.OS}}_{{.Arch}}.{{.Ext}}$                               │
+│ Resolved pattern     │ tofu_1.6.2_linux_arm64.(exe|gz|tar.bz2|tar.gz|tar.xz|tbz2|tgz|txz|zip)$ │
+│ Matched asset name   │ tofu_1.6.2_linux_arm64.zip                                              │
+│ File inside archive  │ tofu                                                                    │
+│ Binary added to PATH │ tofu                                                                    │
+╰──────────────────────┴─────────────────────────────────────────────────────────────────────────╯
 Downloaded tofu_1.6.2_linux_arm64.zip; copied tofu → /usr/local/bin/tofu
->
-
 ────────────────────────────────────────────────────────────────────────────────
 >
 
@@ -1021,7 +736,7 @@ Downloaded tofu_1.6.2_linux_arm64.zip; copied tofu → /usr/local/bin/tofu
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo gruntwork-io/terragrunt
+> download-asset get --verbose --owner-repo gruntwork-io/terragrunt --constraint '< 0.57.0'
 
 
 
@@ -1040,7 +755,7 @@ Downloaded tofu_1.6.2_linux_arm64.zip; copied tofu → /usr/local/bin/tofu
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo gruntwork-io/terragrunt
+> download-asset get --verbose --owner-repo gruntwork-io/terragrunt --constraint '< 0.57.0'
 
 
 
@@ -1059,8 +774,8 @@ Downloaded tofu_1.6.2_linux_arm64.zip; copied tofu → /usr/local/bin/tofu
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo gruntwork-io/terragrunt
- VERBOSE
+> download-asset get --verbose --owner-repo gruntwork-io/terragrunt --constraint '< 0.57.0'
+
 
 
 
@@ -1078,62 +793,62 @@ Downloaded tofu_1.6.2_linux_arm64.zip; copied tofu → /usr/local/bin/tofu
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo gruntwork-io/terragrunt
- VERBOSE
- GitHub endpoint:   https://api.github.com
- GitHub token:      ghp_Qpp5.................................
- Owner:             gruntwork-io
- Repository:        terragrunt
- Config file:       /vhs/download-asset.toml
- Latest release:    v0.55.15
- Current OS ident:  linux
- Current CPU ident: arm64
- Asset pattern:     terragrunt_{{.OS}}_{{.Arch}}$
- Resolved pattern:  terragrunt_linux_arm64$
- File inside archive:
- Binary added to PATH: terragrunt
-
-Downloaded terragrunt_linux_arm64; copied  → /usr/local/bin/terragrunt
->
-
+> download-asset get --verbose --owner-repo gruntwork-io/terragrunt --constraint '< 0.57.0'
+╭──────────────────────┬───────────────────────────────────────────╮
+│ FIELD                │ VALUE                                     │
+├──────────────────────┼───────────────────────────────────────────┤
+│ GitHub endpoint      │ https://api.github.com                    │
+│ GitHub token         │ ghp_Qpp5................................. │
+│ Owner                │ gruntwork-io                              │
+│ Repository           │ terragrunt                                │
+│ Config file          │ /vhs/download-asset.toml                  │
+│ Current OS ident     │ linux                                     │
+│ Current CPU ident    │ arm64                                     │
+│ Asset pattern        │ terragrunt_{{.OS}}_{{.Arch}}$             │
+│ Resolved pattern     │ terragrunt_linux_arm64$                   │
+│ Matched asset name   │ terragrunt_linux_arm64                    │
+│ File inside archive  │                                           │
+│ Binary added to PATH │ terragrunt                                │
+╰──────────────────────┴───────────────────────────────────────────╯
+Downloaded terragrunt_linux_arm64; renamed name → /usr/local/bin/terragrunt
 ────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo gruntwork-io/terragrunt
- VERBOSE
- GitHub endpoint:   https://api.github.com
- GitHub token:      ghp_Qpp5.................................
- Owner:             gruntwork-io
- Repository:        terragrunt
- Config file:       /vhs/download-asset.toml
- Latest release:    v0.55.15
- Current OS ident:  linux
- Current CPU ident: arm64
- Asset pattern:     terragrunt_{{.OS}}_{{.Arch}}$
- Resolved pattern:  terragrunt_linux_arm64$
- File inside archive:
- Binary added to PATH: terragrunt
-
-Downloaded terragrunt_linux_arm64; copied  → /usr/local/bin/terragrunt
->
-
+> download-asset get --verbose --owner-repo gruntwork-io/terragrunt --constraint '< 0.57.0'
+╭──────────────────────┬───────────────────────────────────────────╮
+│ FIELD                │ VALUE                                     │
+├──────────────────────┼───────────────────────────────────────────┤
+│ GitHub endpoint      │ https://api.github.com                    │
+│ GitHub token         │ ghp_Qpp5................................. │
+│ Owner                │ gruntwork-io                              │
+│ Repository           │ terragrunt                                │
+│ Config file          │ /vhs/download-asset.toml                  │
+│ Current OS ident     │ linux                                     │
+│ Current CPU ident    │ arm64                                     │
+│ Asset pattern        │ terragrunt_{{.OS}}_{{.Arch}}$             │
+│ Resolved pattern     │ terragrunt_linux_arm64$                   │
+│ Matched asset name   │ terragrunt_linux_arm64                    │
+│ File inside archive  │                                           │
+│ Binary added to PATH │ terragrunt                                │
+╰──────────────────────┴───────────────────────────────────────────╯
+Downloaded terragrunt_linux_arm64; renamed name → /usr/local/bin/terragrunt
 ────────────────────────────────────────────────────────────────────────────────
->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> download-asset get --verbose --owner-repo gruntwork-io/terragrunt --constraint '< 0.57.0'
+╭──────────────────────┬───────────────────────────────────────────╮
+│ FIELD                │ VALUE                                     │
+├──────────────────────┼───────────────────────────────────────────┤
+│ GitHub endpoint      │ https://api.github.com                    │
+│ GitHub token         │ ghp_Qpp5................................. │
+│ Owner                │ gruntwork-io                              │
+│ Repository           │ terragrunt                                │
+│ Config file          │ /vhs/download-asset.toml                  │
+│ Current OS ident     │ linux                                     │
+│ Current CPU ident    │ arm64                                     │
+│ Asset pattern        │ terragrunt_{{.OS}}_{{.Arch}}$             │
+│ Resolved pattern     │ terragrunt_linux_arm64$                   │
+│ Matched asset name   │ terragrunt_linux_arm64                    │
+│ File inside archive  │                                           │
+│ Binary added to PATH │ terragrunt                                │
+╰──────────────────────┴───────────────────────────────────────────╯
+Downloaded terragrunt_linux_arm64; renamed name → /usr/local/bin/terragrunt
 ────────────────────────────────────────────────────────────────────────────────
 > download-asset get --verbose --owner-repo direnv/direnv
 
@@ -1174,7 +889,6 @@ Downloaded terragrunt_linux_arm64; copied  → /usr/local/bin/terragrunt
 
 ────────────────────────────────────────────────────────────────────────────────
 > download-asset get --verbose --owner-repo direnv/direnv
- VERBOSE
 
 
 
@@ -1191,44 +905,45 @@ Downloaded terragrunt_linux_arm64; copied  → /usr/local/bin/terragrunt
 
 
 
-────────────────────────────────────────────────────────────────────────────────
-> download-asset get --verbose --owner-repo direnv/direnv
- VERBOSE
- GitHub endpoint:   https://api.github.com
- GitHub token:      ghp_Qpp5.................................
- Owner:             direnv
- Repository:        direnv
- Config file:       /vhs/download-asset.toml
- Latest release:    v2.34.0
- Current OS ident:  linux
- Current CPU ident: arm64
- Asset pattern:     direnv.{{.OS}}-{{.Arch}}$
- Resolved pattern:  direnv.linux-arm64$
- File inside archive:
- Binary added to PATH: direnv
-
-Downloaded direnv.linux-arm64; copied  → /usr/local/bin/direnv
->
 
 ────────────────────────────────────────────────────────────────────────────────
 > download-asset get --verbose --owner-repo direnv/direnv
- VERBOSE
- GitHub endpoint:   https://api.github.com
- GitHub token:      ghp_Qpp5.................................
- Owner:             direnv
- Repository:        direnv
- Config file:       /vhs/download-asset.toml
- Latest release:    v2.34.0
- Current OS ident:  linux
- Current CPU ident: arm64
- Asset pattern:     direnv.{{.OS}}-{{.Arch}}$
- Resolved pattern:  direnv.linux-arm64$
- File inside archive:
- Binary added to PATH: direnv
-
-Downloaded direnv.linux-arm64; copied  → /usr/local/bin/direnv
->
-
+╭──────────────────────┬───────────────────────────────────────────╮
+│ FIELD                │ VALUE                                     │
+├──────────────────────┼───────────────────────────────────────────┤
+│ GitHub endpoint      │ https://api.github.com                    │
+│ GitHub token         │ ghp_Qpp5................................. │
+│ Owner                │ direnv                                    │
+│ Repository           │ direnv                                    │
+│ Config file          │ /vhs/download-asset.toml                  │
+│ Latest release       │ v2.34.0                                   │
+│ Current OS ident     │ linux                                     │
+│ Current CPU ident    │ arm64                                     │
+│ Asset pattern        │ direnv.{{.OS}}-{{.Arch}}$                 │
+│ Resolved pattern     │ direnv.linux-arm64$                       │
+│ Matched asset name   │ direnv.linux-arm64                        │
+│ File inside archive  │                                           │
+│ Binary added to PATH │ direnv                                    │
+╰──────────────────────┴───────────────────────────────────────────╯
+────────────────────────────────────────────────────────────────────────────────
+> download-asset get --verbose --owner-repo direnv/direnv
+╭──────────────────────┬───────────────────────────────────────────╮
+│ FIELD                │ VALUE                                     │
+├──────────────────────┼───────────────────────────────────────────┤
+│ GitHub endpoint      │ https://api.github.com                    │
+│ GitHub token         │ ghp_Qpp5................................. │
+│ Owner                │ direnv                                    │
+│ Repository           │ direnv                                    │
+│ Config file          │ /vhs/download-asset.toml                  │
+│ Latest release       │ v2.34.0                                   │
+│ Current OS ident     │ linux                                     │
+│ Current CPU ident    │ arm64                                     │
+│ Asset pattern        │ direnv.{{.OS}}-{{.Arch}}$                 │
+│ Resolved pattern     │ direnv.linux-arm64$                       │
+│ Matched asset name   │ direnv.linux-arm64                        │
+│ File inside archive  │                                           │
+│ Binary added to PATH │ direnv                                    │
+╰──────────────────────┴───────────────────────────────────────────╯
 ────────────────────────────────────────────────────────────────────────────────
 >
 
@@ -1289,13 +1004,13 @@ Downloaded direnv.linux-arm64; copied  → /usr/local/bin/direnv
 ────────────────────────────────────────────────────────────────────────────────
 > ll /usr/local/bin
 Permissions Links Size User Group Date Modified    Name
-drwxr-xr-x      1    - root root  2024-03-15 05:19  ./
-drwxr-xr-x      1    - root root  2023-11-20 00:00  ../
-.rwxr-xr-x      1 6.7M root root  2024-03-15 05:19  direnv*
-.rwxr-xr-x      1  15M root root  2024-03-15 04:21  download-asset*
-.rwxr-xr-x      1 1.6M root root  2024-03-09 11:12  eza*
-.rwxr-xr-x      1  72M root root  2024-03-15 05:19  terragrunt*
-.rwxr-xr-x      1  75M root root  2024-03-15 05:19  tofu*
+drwxr-xr-x      1    - root root  2024-04-25 02:48  ./
+drwxr-xr-x      1    - root root  2024-04-08 00:00  ../
+.rwxr-xr-x      1 6.7M root root  2024-04-25 02:48  direnv*
+.rwxr-xr-x      1  16M root root  2024-04-25 02:44  download-asset*
+.rwxr-xr-x      1 1.6M root root  2024-04-11 21:51  eza*
+.rwxr-xr-x      1  74M root root  2024-04-25 02:48  terragrunt*
+.rwxr-xr-x      1  75M root root  2024-04-25 02:47  tofu*
 >
 
 
@@ -1308,13 +1023,13 @@ drwxr-xr-x      1    - root root  2023-11-20 00:00  ../
 ────────────────────────────────────────────────────────────────────────────────
 > ll /usr/local/bin
 Permissions Links Size User Group Date Modified    Name
-drwxr-xr-x      1    - root root  2024-03-15 05:19  ./
-drwxr-xr-x      1    - root root  2023-11-20 00:00  ../
-.rwxr-xr-x      1 6.7M root root  2024-03-15 05:19  direnv*
-.rwxr-xr-x      1  15M root root  2024-03-15 04:21  download-asset*
-.rwxr-xr-x      1 1.6M root root  2024-03-09 11:12  eza*
-.rwxr-xr-x      1  72M root root  2024-03-15 05:19  terragrunt*
-.rwxr-xr-x      1  75M root root  2024-03-15 05:19  tofu*
+drwxr-xr-x      1    - root root  2024-04-25 02:48  ./
+drwxr-xr-x      1    - root root  2024-04-08 00:00  ../
+.rwxr-xr-x      1 6.7M root root  2024-04-25 02:48  direnv*
+.rwxr-xr-x      1  16M root root  2024-04-25 02:44  download-asset*
+.rwxr-xr-x      1 1.6M root root  2024-04-11 21:51  eza*
+.rwxr-xr-x      1  74M root root  2024-04-25 02:48  terragrunt*
+.rwxr-xr-x      1  75M root root  2024-04-25 02:47  tofu*
 >
 
 
@@ -1327,13 +1042,13 @@ drwxr-xr-x      1    - root root  2023-11-20 00:00  ../
 ────────────────────────────────────────────────────────────────────────────────
 > ll /usr/local/bin
 Permissions Links Size User Group Date Modified    Name
-drwxr-xr-x      1    - root root  2024-03-15 05:19  ./
-drwxr-xr-x      1    - root root  2023-11-20 00:00  ../
-.rwxr-xr-x      1 6.7M root root  2024-03-15 05:19  direnv*
-.rwxr-xr-x      1  15M root root  2024-03-15 04:21  download-asset*
-.rwxr-xr-x      1 1.6M root root  2024-03-09 11:12  eza*
-.rwxr-xr-x      1  72M root root  2024-03-15 05:19  terragrunt*
-.rwxr-xr-x      1  75M root root  2024-03-15 05:19  tofu*
+drwxr-xr-x      1    - root root  2024-04-25 02:48  ./
+drwxr-xr-x      1    - root root  2024-04-08 00:00  ../
+.rwxr-xr-x      1 6.7M root root  2024-04-25 02:48  direnv*
+.rwxr-xr-x      1  16M root root  2024-04-25 02:44  download-asset*
+.rwxr-xr-x      1 1.6M root root  2024-04-11 21:51  eza*
+.rwxr-xr-x      1  74M root root  2024-04-25 02:48  terragrunt*
+.rwxr-xr-x      1  75M root root  2024-04-25 02:47  tofu*
 >
 logout
 

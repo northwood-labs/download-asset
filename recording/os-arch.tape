@@ -21,22 +21,6 @@ Set TypingSpeed 75ms
 Set CursorBlink true
 
 Sleep 1s
-Type "# View the help for the tool..."
-Enter
-Type "download-asset os-arch --help | less"
-Sleep 500ms
-Enter
-Sleep 2s
-Space
-Sleep 2s
-Space
-Sleep 2s
-Space
-Sleep 2s
-Space
-Type q
-
-Sleep 1s
 Enter
 Type "# Get the *current* OS and CPU architecture..."
 Enter
