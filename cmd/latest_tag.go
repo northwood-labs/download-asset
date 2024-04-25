@@ -88,8 +88,8 @@ var (
 				t.Row("Repository", ownerRepo[1])
 			}
 
-			if fSkipToTags {
-				ref, err = github.GetLatestTag(client, ownerRepo[0], ownerRepo[1])
+			if fSkipToTags || fConstraint != "" {
+				ref, err = github.GetLatestTag(client, ownerRepo[0], ownerRepo[1], fConstraint)
 				if err != nil {
 					exiterrorf.ExitErrorf(errors.Wrap(err, "failed to discover the release"))
 				}
@@ -98,7 +98,7 @@ var (
 			} else {
 				release, err = github.GetLatestRelease(client, ownerRepo[0], ownerRepo[1])
 				if err != nil {
-					ref, err = github.GetLatestTag(client, ownerRepo[0], ownerRepo[1])
+					ref, err = github.GetLatestTag(client, ownerRepo[0], ownerRepo[1], "")
 					if err != nil {
 						exiterrorf.ExitErrorf(errors.Wrap(err, "failed to discover the release"))
 					}
@@ -161,5 +161,12 @@ func init() {
 		"t",
 		false,
 		"Skip looking up releases and just look at tags.",
+	)
+	latestTagCmd.Flags().StringVarP(
+		&fConstraint,
+		"constraint",
+		"c",
+		"",
+		"Constrain the version to a particular range. Implies --skip-to-tags.",
 	)
 }

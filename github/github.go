@@ -80,7 +80,7 @@ func GetLatestRelease(client *gh.Client, owner, repo string) (*gh.RepositoryRele
 	return release, nil
 }
 
-func GetLatestTag(client *gh.Client, owner, repo string) (*version.Version, error) {
+func GetLatestTag(client *gh.Client, owner, repo, constraint string) (*version.Version, error) {
 	isGo := false
 	if owner+"/"+repo == "golang/go" {
 		isGo = true
@@ -108,7 +108,9 @@ func GetLatestTag(client *gh.Client, owner, repo string) (*version.Version, erro
 			}
 		}
 
-		v, err := version.NewVersion(ver)
+		var v *version.Version
+
+		v, err = version.NewVersion(ver)
 		if err == nil && v != nil && v.String() != "" {
 			versions = append(versions, v)
 		}
@@ -117,11 +119,26 @@ func GetLatestTag(client *gh.Client, owner, repo string) (*version.Version, erro
 	// After this, the versions are properly sorted
 	sort.Sort(sort.Reverse(version.Collection(versions)))
 
-	if len(versions) > 0 {
-		return versions[0], nil
+	var constraints version.Constraints
+
+	if constraint != "" {
+		constraints, err = version.NewConstraint(constraint)
+		if err != nil {
+			return nil, errors.Wrap(err, "failed to create new version constraint")
+		}
 	}
 
-	return &version.Version{}, errors.New("no versions found")
+	if len(versions) > 0 {
+		for i := range versions {
+			ver := versions[i]
+
+			if constraints.Check(ver) {
+				return ver, nil
+			}
+		}
+	}
+
+	return &version.Version{}, errors.New("no matching versions found")
 }
 
 func GetReleaseVersion(client *gh.Client, owner, repo, tag string) (*gh.RepositoryRelease, error) {
@@ -148,6 +165,10 @@ func GetAssetStream( // lint:allow_named_returns
 		if rePattern.MatchString(*asset.Name) {
 			break
 		}
+	}
+
+	if len(release.Assets) == 0 {
+		return nil, "", errors.New("no release assets found")
 	}
 
 	asset := release.Assets[i]

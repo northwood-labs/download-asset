@@ -1,4 +1,7 @@
+<div><img src="download-asset@2x.jpg"></div>
+
 # Download Assets
+
 Simplifies the process of:
 
 1. **installing**

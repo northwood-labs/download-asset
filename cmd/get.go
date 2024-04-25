@@ -39,6 +39,7 @@ var (
 	fTag         string
 	fVerbose     bool
 	fWriteToBin  string
+	fConstraint  string
 
 	fDarwin    string
 	fDragonfly string
@@ -159,6 +160,16 @@ var (
 
 			// Apply values from configuration file.
 			applyConfigValues(ownerRepo)
+
+			// If we have a constraint, we need to find the latest tag that satisfies it.
+			if fConstraint != "" {
+				ref, err = github.GetLatestTag(client, ownerRepo[0], ownerRepo[1], fConstraint)
+				if err != nil {
+					exiterrorf.ExitErrorf(errors.Wrap(err, "failed to discover the release"))
+				}
+
+				fTag = github.RemoveVFromTag(ref.String())
+			}
 
 			if fTag == "latest" {
 				release, err = github.GetLatestRelease(client, ownerRepo[0], ownerRepo[1])
@@ -350,6 +361,13 @@ func init() {
 		"w",
 		"",
 		"The final name of the binary.",
+	)
+	getCmd.Flags().StringVarP(
+		&fConstraint,
+		"constraint",
+		"c",
+		"",
+		"Constrain the version to a particular range.",
 	)
 
 	handleFlags(getCmd)
