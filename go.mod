@@ -7,7 +7,7 @@ toolchain go1.22.1
 require (
 	github.com/charmbracelet/lipgloss v0.10.0
 	github.com/google/go-github/v60 v60.0.0
-	github.com/hashicorp/go-version v1.6.0
+	github.com/hashicorp/go-version v1.7.0
 	github.com/lithammer/dedent v1.1.0
 	github.com/mailgun/errors v0.2.0
 	github.com/nlnwa/whatwg-url v0.4.0
