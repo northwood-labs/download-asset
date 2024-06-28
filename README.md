@@ -95,9 +95,6 @@ go install github.com/northwood-labs/download-asset@latest
 
 This will download and compile `download-asset` on-demand for your current OS and CPU architecture.
 
-> [!IMPORTANT]
-> We are _very intentionally_ NOT attaching pre-built assets to releases because it creates a chicken-and-egg problem. You'd have to select your OS and CPU architecture in order to install the code, which is designed to dynamically _figure-out_ your OS and CPU architecture in order to download other assets. That seems silly to us.
-
 ## Usage
 
 ![](recording/get.gif)
