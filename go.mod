@@ -10,7 +10,7 @@ require (
 	github.com/hashicorp/go-version v1.7.0
 	github.com/lithammer/dedent v1.1.0
 	github.com/mailgun/errors v0.2.0
-	github.com/nlnwa/whatwg-url v0.5.0
+	github.com/nlnwa/whatwg-url v0.5.1
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301221220-6be250811dab
 	github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20240301221220-6be250811dab
 	github.com/pkg/errors v0.9.1
@@ -22,7 +22,7 @@ require (
 
 require (
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
-	github.com/bits-and-blooms/bitset v1.13.0 // indirect
+	github.com/bits-and-blooms/bitset v1.20.0 // indirect
 	github.com/charmbracelet/x/ansi v0.4.2 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
@@ -46,9 +46,9 @@ require (
 	github.com/subosito/gotenv v1.6.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/exp v0.0.0-20240222234643-814bf88cf225 // indirect
-	golang.org/x/net v0.25.0 // indirect
-	golang.org/x/sys v0.20.0 // indirect
-	golang.org/x/text v0.15.0 // indirect
+	golang.org/x/net v0.34.0 // indirect
+	golang.org/x/sys v0.29.0 // indirect
+	golang.org/x/text v0.21.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
