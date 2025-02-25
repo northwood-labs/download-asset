@@ -1,8 +1,7 @@
 module github.com/northwood-labs/download-asset
 
 go 1.21
-
-toolchain go1.22.1
+toolchain go1.23.6
 
 require (
 	github.com/charmbracelet/lipgloss v1.0.0
@@ -17,7 +16,7 @@ require (
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.19.0
 	github.com/ulikunitz/xz v0.5.12
-	golang.org/x/oauth2 v0.26.0
+	golang.org/x/oauth2 v0.27.0
 )
 
 require (
