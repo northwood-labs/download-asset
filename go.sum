@@ -54,8 +54,8 @@ github.com/mitchellh/mapstructure v1.5.0 h1:jeMsZIYE/09sWLaz43PL7Gy6RuMjD2eJVyua
 github.com/mitchellh/mapstructure v1.5.0/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/muesli/termenv v0.15.2 h1:GohcuySI0QmI3wN8Ok9PtKGkgkFIk7y6Vpb5PvrY+Wo=
 github.com/muesli/termenv v0.15.2/go.mod h1:Epx+iuz8sNs7mNKhxzH4fWXGNpZwUaJKRS1noLXviQ8=
-github.com/nlnwa/whatwg-url v0.5.1 h1:UTE/wOlqhUuFlNv5TiQbD13amU8uRwonc2S6EsQYUfk=
-github.com/nlnwa/whatwg-url v0.5.1/go.mod h1:x0FPXJzzOEieQtsBT/AKvbiBbQ46YlL6Xa7m02M1ECk=
+github.com/nlnwa/whatwg-url v0.6.0 h1:y8nrRIM4AoQrV1uTgN6Tz47Cp8PIBNeZjJrQpjouiVQ=
+github.com/nlnwa/whatwg-url v0.6.0/go.mod h1:x0FPXJzzOEieQtsBT/AKvbiBbQ46YlL6Xa7m02M1ECk=
 github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301221220-6be250811dab h1:3aLFKtnh41to4V21HVfohTtgdNIMqvXWICOmjngohc0=
 github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301221220-6be250811dab/go.mod h1:ixVR+WTyw0LxuhcprIZzxgxAy7LyZRFkpyIwvyNdpcY=
 github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20240301221220-6be250811dab h1:wTZCozOiUWNj6T2al4r4+RINAtsgrtPriLXOS9Urucc=
