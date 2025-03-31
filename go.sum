@@ -55,8 +55,8 @@ github.com/mattn/go-runewidth v0.0.16 h1:E5ScNMtiwvlvB5paMFdw9p4kSQzbXFikJ5SQO6T
 github.com/mattn/go-runewidth v0.0.16/go.mod h1:Jdepj2loyihRzMpdS35Xk/zdY8IAYHsh153qUoGf23w=
 github.com/muesli/termenv v0.16.0 h1:S5AlUN9dENB57rsbnkPyfdGuWIlkmzJjbFf0Tf5FWUc=
 github.com/muesli/termenv v0.16.0/go.mod h1:ZRfOIKPFDYQoDFF4Olj7/QJbW60Ol/kL1pU3VfY/Cnk=
-github.com/nlnwa/whatwg-url v0.6.1 h1:Zlefa3aglQFHF/jku45VxbEJwPicDnOz64Ra3F7npqQ=
-github.com/nlnwa/whatwg-url v0.6.1/go.mod h1:x0FPXJzzOEieQtsBT/AKvbiBbQ46YlL6Xa7m02M1ECk=
+github.com/nlnwa/whatwg-url v0.6.2 h1:jU61lU2ig4LANydbEJmA2nPrtCGiKdtgT0rmMd2VZ/Q=
+github.com/nlnwa/whatwg-url v0.6.2/go.mod h1:x0FPXJzzOEieQtsBT/AKvbiBbQ46YlL6Xa7m02M1ECk=
 github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301221220-6be250811dab h1:3aLFKtnh41to4V21HVfohTtgdNIMqvXWICOmjngohc0=
 github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301221220-6be250811dab/go.mod h1:ixVR+WTyw0LxuhcprIZzxgxAy7LyZRFkpyIwvyNdpcY=
 github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20240301221220-6be250811dab h1:wTZCozOiUWNj6T2al4r4+RINAtsgrtPriLXOS9Urucc=
