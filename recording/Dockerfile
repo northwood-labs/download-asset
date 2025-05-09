@@ -1,4 +1,4 @@
-FROM alpine:latest@sha256:beefdbd8a1da6d2915566fde36db9db0b524eb737fc57cd1367effd16dc0d06d as fontcollector
+FROM alpine:latest@sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c as fontcollector
 RUN apk add --no-cache \
     --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \
     --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
