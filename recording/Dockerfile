@@ -5,7 +5,7 @@ RUN apk add --no-cache \
     --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     font-meslo-nerd
 
-FROM golang:alpine@sha256:2a882244fb51835ebbd8313bffee83775b0c076aaf56b497b43d8a4c72db65e1 AS golang
+FROM golang:alpine@sha256:daae04ebad0c21149979cd8e9db38f565ecefd8547cf4a591240dc1972cf1399 AS golang
 COPY . /workspace
 WORKDIR /workspace
 RUN go install ./...
