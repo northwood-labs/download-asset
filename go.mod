@@ -1,6 +1,7 @@
 module github.com/northwood-labs/download-asset
 
-go 1.21
+go 1.23.0
+
 toolchain go1.24.1
 
 require (
@@ -8,7 +9,7 @@ require (
 	github.com/google/go-github/v60 v60.0.0
 	github.com/hashicorp/go-version v1.7.0
 	github.com/lithammer/dedent v1.1.0
-	github.com/mailgun/errors v0.2.0
+	github.com/mailgun/errors v0.4.0
 	github.com/nlnwa/whatwg-url v0.6.2
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301221220-6be250811dab
 	github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20240301221220-6be250811dab
