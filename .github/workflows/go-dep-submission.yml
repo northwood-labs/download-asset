@@ -45,7 +45,7 @@ jobs:
           cache: true
 
       - name: Run snapshot action
-        uses: actions/go-dependency-submission@a9f822c0eac4dba3cc95b971659dfbf3036d4bfb # v2.0.1
+        uses: actions/go-dependency-submission@f35d5c9af13ce9cc32f7930b171e315e878f6921 # v2.0.3
         with:
           # Required: Define the repo path to the go.mod file used by the
           # build target
