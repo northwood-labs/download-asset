@@ -16,7 +16,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.20.1
-	github.com/ulikunitz/xz v0.5.13
+	github.com/ulikunitz/xz v0.5.15
 	golang.org/x/oauth2 v0.30.0
 )
 
