@@ -9,7 +9,7 @@ require (
 	github.com/google/go-github/v60 v60.0.0
 	github.com/hashicorp/go-version v1.8.0
 	github.com/lithammer/dedent v1.1.0
-	github.com/mailgun/errors v0.4.0
+	github.com/mailgun/errors v0.5.0
 	github.com/nlnwa/whatwg-url v0.6.2
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301221220-6be250811dab
 	github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20240301221220-6be250811dab
@@ -38,7 +38,6 @@ require (
 	github.com/pelletier/go-toml/v2 v2.2.4 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/sagikazarmark/locafero v0.11.0 // indirect
-	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/sourcegraph/conc v0.3.1-0.20240121214520-5f936abd7ae8 // indirect
 	github.com/spf13/afero v1.15.0 // indirect
 	github.com/spf13/cast v1.10.0 // indirect
