@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	github.com/charmbracelet/lipgloss v1.1.0
 	github.com/google/go-github/v60 v60.0.0
-	github.com/hashicorp/go-version v1.8.0
+	github.com/hashicorp/go-version v1.9.0
 	github.com/lithammer/dedent v1.1.0
 	github.com/mailgun/errors v0.5.0
 	github.com/nlnwa/whatwg-url v0.6.2
