@@ -44,8 +44,8 @@ github.com/lithammer/dedent v1.1.0 h1:VNzHMVCBNG1j0fh3OrsFRkVUwStdDArbgBWoPAffkt
 github.com/lithammer/dedent v1.1.0/go.mod h1:jrXYCQtgg0nJiN+StA2KgR7w6CiQNv9Fd/Z9BP0jIOc=
 github.com/lucasb-eyer/go-colorful v1.2.0 h1:1nnpGOrhyZZuNyfu1QjKiUICQ74+3FNCN69Aj6K7nkY=
 github.com/lucasb-eyer/go-colorful v1.2.0/go.mod h1:R4dSotOR9KMtayYi1e77YzuveK+i7ruzyGqttikkLy0=
-github.com/mailgun/errors v0.5.0 h1:pLQo8uhAdORsjN69mGixSr0pGs46z/BW/FQXd8HG1VM=
-github.com/mailgun/errors v0.5.0/go.mod h1:+2nrgY77E0vDkG4ErehpcpbSkMLkseJzKbrva89WeSs=
+github.com/mailgun/errors v0.6.0 h1:IWmzIGwXCSN/Q60JT/lXvam3xRAgTUJSX88KwKJ7hss=
+github.com/mailgun/errors v0.6.0/go.mod h1:+2nrgY77E0vDkG4ErehpcpbSkMLkseJzKbrva89WeSs=
 github.com/mattn/go-isatty v0.0.20 h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWEY=
 github.com/mattn/go-isatty v0.0.20/go.mod h1:W+V8PltTTMOvKvAeJH7IuucS94S2C6jfK/D7dTCTo3Y=
 github.com/mattn/go-runewidth v0.0.16 h1:E5ScNMtiwvlvB5paMFdw9p4kSQzbXFikJ5SQO6TULQc=
