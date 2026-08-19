@@ -124,7 +124,7 @@ RUN --mount=type=secret,id=GITHUB_TOKEN GITHUB_TOKEN="$(cat /run/secrets/GITHUB_
 #-------------------------------------------------------------------------------
 
 # syntax=docker/dockerfile:1
-FROM --platform=$TARGETPLATFORM ubuntu:24.04@sha256:a08e551cb33850e4740772b38217fc1796a66da2506d312abe51acda354ff061 AS final
+FROM --platform=$TARGETPLATFORM ubuntu:25.10@sha256:7cc5e35f6567ee8c66d2abb4aab0fd866669e6207c237c3a8f0947a5c7f17092 AS final
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y install file --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 COPY --from=trivy /usr/local/bin/trivy /usr/local/bin/trivy
