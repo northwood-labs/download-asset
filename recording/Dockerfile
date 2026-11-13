@@ -10,7 +10,7 @@ COPY . /workspace
 WORKDIR /workspace
 RUN go install ./...
 
-FROM ghcr.io/charmbracelet/vhs:latest@sha256:e88ed3faa06183a197fd44ded83e706098d9e4038b72da94bcdb9cb9b67e3527 AS debian
+FROM ghcr.io/charmbracelet/vhs:latest@sha256:ea49a6a1c529be83153e88321892b5585964418f0b9055e8c1e0d732194234a3 AS debian
 SHELL ["/bin/bash", "-euo", "pipefail", "-c"]
 RUN apt-get -y update && apt-get install -y --no-install-recommends gpg wget
 RUN mkdir -p /etc/apt/keyrings
@@ -19,7 +19,7 @@ RUN echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de st
 RUN chmod 0644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
 RUN apt-get -y update && apt-get install -y --no-install-recommends eza
 
-FROM ghcr.io/charmbracelet/vhs:latest@sha256:e88ed3faa06183a197fd44ded83e706098d9e4038b72da94bcdb9cb9b67e3527 AS vhs
+FROM ghcr.io/charmbracelet/vhs:latest@sha256:ea49a6a1c529be83153e88321892b5585964418f0b9055e8c1e0d732194234a3 AS vhs
 RUN apt-get -y update && apt-get install -y --no-install-recommends less && apt-get clean && rm -rf /var/lib/apt/lists/*
 COPY --from=golang /go/bin/download-asset /usr/local/bin/download-asset
 COPY --from=debian /usr/bin/eza /usr/local/bin/eza
